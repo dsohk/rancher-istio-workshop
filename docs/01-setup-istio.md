@@ -1,57 +1,86 @@
-# Lab 1 - Access your Rancher Server
+# Lab 1 - Setup Istio
 
-1. Access your Rancher Server using the URL & credentials provided (over email or other communication.....)
 
-   ![01-rancher-url](../images/01-rancher-url.png)
 
-Click on "Advance" & click on "Proceed to RancherIP.sslip.io (unsafe)"
+## Step 1 - Access your Rancher Cluster
+
+Access your Rancher Server using the URL & credentials provided (over email or other communication.....). Click on advance `Proceed to RancherIP.sslip.io`
+
+![01-rancher-url](../images/01-rancher-url.png)
 
 ![01-rancher-url-insecure-message](../images/01-rancher-url-insecure-message.png)
 
-Provide Rancher Username & Password
+You will be presented with Rancher Server Login Page. Enter the Rancher Credentials.
 
 ![01-rancher-credentials](../images/01-rancher-credentials-16507073634331.png)
 
+2. In Rancher Home page, click the `3-line` icon next to Rancher logo on the top left corner. Click on `Explore Cluster` > `Cluster Management`
 
+![01-rancher-cluster-management-rke2cluster1](../images/01-rancher-cluster-management-rke2cluster1.png)
 
-![02-rancher-homepage](../images/02-rancher-homepage.png)
+Click on `Explore` button on the right hand for Cluster `rke2-cluster1`
 
-# Lab 2 - Setup Istio with Rancher
+![](../images/01-rancher-cluster-management-rke2cluster1-explore.png)
 
-Access your 
+You will be presented with `Cluster Dashboard` view for Cluster `rke2-cluster1`
 
-Login to your instance of Rancher Server prepared for you in the lab environment. Then, follow the steps below to setup Istio with Rancher on its downstream RKE2 cluster.
-
-
-
-## Step 1 - Navigate to Cluster Tools of RKE2 cluster
-
-1. In Rancher Home page, click the 3-line icon next to Rancher logo on the top left corner.
-2. Click `rke2-cluster` under Explorer section of the left side pane. This is the downstream RKE2 cluster we will be running Istio.
-3. At the bottom of the left side menu pane, click `Cluster Tools` button.
-
-
+![01-rke2cluster1-cluster-dashboard](../images/01-rke2cluster1-cluster-dashboard.png)
 
 ## Step 2 - Enable monitoring on RKE2
 
 Before installing Istio, you need to enable Monitoring (Prometheus and Grafana) in the cluster tool of RKE2 cluster.
 
-1. Click `Install` button of the `Monitoring` application.
-2. Choose `System` in `Install Into Project` selection box, and then click `Next`.
-3. Accept the default settings of Prometheus and Grafana, click `Install` to start installation.
+Click on `Cluster Tools` at the bottom of the left hand side menu pane. 
+
+![01-rke2cluster1-cluster-dashboard](../images/01-rke2cluster1-cluster-dashboard.png)
+
+Click `Install`  button of the `Monitoring` application.
+
+![01-rke2cluster1-dashboard-cluster-tools](../images/01-rke2cluster1-dashboard-cluster-tools.png)
+
+Choose `System` in `Install Into Project` selection box, and then click `Next`.
+
+![01-rke2cluster1-monitoring-selecting-project-default](../images/01-rke2cluster1-monitoring-selecting-project-default.png)
+
+Ideally you will leave the Prometheus values default, however for our lab since we are using 4 vCPU's let adjust our resource request as below
+
+Resource Limits 
+
+`Requested CPU = 250m`
+
+`Requested Memory = 500Mi`
+
+Rest all default
+
+![01-rk2cluster1-monitoring-adjusting-promethus-value](../images/01-rk2cluster1-monitoring-adjusting-promethus-value.png)
+
+Once Prometheus is successfully installed, you should success message as below. 
+
+![01-rkecluster1-monitoring-installation-complete](../images/01-rkecluster1-monitoring-installation-complete.png)
+
+Once Monitoring is installed, you will see the `Monitoring` as available left hand side menu pane. You can click on `Grafana` which will open browser window `Grafana Dashboard`
+
+![01-rke2cluster1-monitoring-homepage](../images/01-rke2cluster1-monitoring-homepage.png)
 
 
 
-## Step 3 - Install Istio on RKE2
+## Lab 3 - Setup Istio with Rancher
 
-After Monitoring addon is installed, navigate to the `Cluster Tools` page and install Istio on the RKE2 cluster
+After Monitoring add-on is installed, navigate to the `Cluster Tools` page, this time choose `Istio` and click on `Install` button.
+
+![01-rke2cluster1-dashboard-cluster-tools](../images/01-rke2cluster1-dashboard-cluster-tools.png)
+
+Choose `System` in `Install Into Project` selection box, and then click `Next`.
+
+![01-rke2cluster1-istio-install-project-selection-value-default](../images/01-rke2cluster1-istio-install-project-selection-value-default.png)
+
+On the `components` tab, check the box next to `Enabled CNI` and ` Enable Jaeger Tracing` to select the appropriate Istio components. 
+
+![01-rke2cluster1-istio-component-selections](../images/01-rke2cluster1-istio-component-selections.png)
+
+On the `Custom Overlay File` ta, add a custom overlay file like below to specify the path for `cniBinDir` and `cniConfDir`.
 
 See Notes: https://rancher.com/docs/rancher/v2.6/en/istio/configuration-reference/rke2/
-
-1. Navigate to the `Cluster Tools` page again, this time, choose `Istio` to be installed on the RKE2 cluster, click `Install` button.
-2. Choose `System` in `Install Into Project` selection box, and then click `Next`.
-3. On the `components` tab, check the box next to `Enabled CNI`.
-4. On the `Custom Overlay File` tab, add a custom overlay file like below to specify the path for `cniBinDir` and `cniConfDir`.
 
 ```yaml
 apiVersion: install.istio.io/v1alpha1
@@ -79,20 +108,50 @@ spec:
       cniConfDir: /etc/cni/net.d
 ```
 
-5. Click `Install` button to start deploying Istio on RKE2 cluster.
+Your Custom Overlay file should look as below
 
+![01-rke2cluster1-istio-customer-overlay-file](../images/01-rke2cluster1-istio-customer-overlay-file.png)
 
+![01-Istio-Kiali-enable-auto-injection-final](../images/01-Istio-Kiali-enable-auto-injection-final.png)
 
-With this, both Istio and Prometheus are installed.
+Click `Install` button to start deploying Istio on RKE2 cluster.
+
+![01-rke2-cluster1-istio-install-initated](../images/01-rke2-cluster1-istio-install-initated.png)
+
+On successfully install of Istio, you should see below success message.
+
+![01-rkecluster2-cluster-tools-istio-install-completed](../images/01-rkecluster2-cluster-tools-istio-install-completed.png)
+
+You should now see `Istio` on left hand side menu pane & if you click on the drop down under Istio you should see `Kiali` and `Jaeger`
+
+![01-rke2cluster-istio-kiali-and-jaeger](../images/01-rke2cluster-istio-kiali-and-jaeger.png)
+
+You can click on `Kiali` and `Jaeger` to look at thier respective dashboard
+
+![01-rke2cluster2-istio-kiali-Ui](../images/01-rke2cluster2-istio-kiali-Ui.png)
+
+![01-rke2cluster1-istio-jaeger-ui](../images/01-rke2cluster1-istio-jaeger-ui.png)
+
+# 
 
 ## Step 4 - Open Grafana and check Istio monitoring
 
-Check Istio-related dashboard
+Click on `Monitoring` and click on `Grafana` . 
+
+Under Grafana Dashboards, you will see various Istio Dashboard options to view (Istio ControlPlane Dashboard,  Istio Mesh Dashboard, Istio Performance Dashboard, Istio Service Dashboard, etc...... )
+
+![01-rke1cluster1-monitoring-dashboard-istio-options](../images/01-rke1cluster1-monitoring-dashboard-istio-options.png)
+
+Next step is to enable Istio sidecare injection in the namespace where we would like to run our application. 
 
 ## Step 5 - Enable sidecar injection in default workload
 
-1. Click `Istio` on the left pane menu
-2. Click `Kiali`
-3. Choose Default namespace, click "..." icon
-4. Check `Enable Auto Injection` in popup menu.
+Click `Istio` on the left pane menu and Click `Kiali`
 
+Choose Default namespace, click `3 dots vertical line` and click on `Enable Auto Injection`
+
+![01-rke2cluster1-istio-kiali-enable-auto-injection](../images/01-rke2cluster1-istio-kiali-enable-auto-injection.png)
+
+Upon success you move your mouse on `Labels` you will see the injection successfully done 
+
+![rke2cluster1-istio-kiali-enable-auto-injection-success](../images/rke2cluster1-istio-kiali-enable-auto-injection-success.png)
