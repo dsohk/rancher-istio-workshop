@@ -4,6 +4,18 @@
 
    ![01-rancher-url](../images/01-rancher-url.png)
 
+Click on "Advance" & click on "Proceed to RancherIP.sslip.io (unsafe)"
+
+![01-rancher-url-insecure-message](../images/01-rancher-url-insecure-message.png)
+
+Provide Rancher Username & Password
+
+![01-rancher-credentials](../images/01-rancher-credentials-16507073634331.png)
+
+
+
+![02-rancher-homepage](../images/02-rancher-homepage.png)
+
 # Lab 2 - Setup Istio with Rancher
 
 Access your 
