@@ -2,7 +2,7 @@
 
 1. Access your Rancher Server using the URL & credentials provided (over email or other communication.....)
 
-   ![01-rancher-url](../../Images/01-rancher-url.png)
+   ![01-rancher-url](../../Images/01-rancher-url-16507062249782.png)
 
 # Lab 2 - Setup Istio with Rancher
 
