@@ -1,6 +1,12 @@
+# Lab 1 - Access your Rancher Server
+
+1. Access your Rancher Server using the URL & credentials provided (over email or other communication.....)
+
+   ![01-rancher-url](../../Images/01-rancher-url.png)
+
 # Lab 2 - Setup Istio with Rancher
 
-
+Access your 
 
 Login to your instance of Rancher Server prepared for you in the lab environment. Then, follow the steps below to setup Istio with Rancher on its downstream RKE2 cluster.
 
