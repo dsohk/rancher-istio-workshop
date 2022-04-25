@@ -112,23 +112,49 @@ Destination Rule created, you can hit `close`
 
 ![Istio-desintationrule](../images/Istio-desintationrule.png)
 
+We have successfully deployed the destination rule.
 
-
-
-
-
+Next step is to generate traffic to the bookinfo app. For this we will deploy a pod which will communicate every 1 second to the bookinfo app.
 
 ## Step 5 - deploy traffic generation app
+
+For simplicity sake, we will deploy a simple pod which will curl into bookinfo app. The pod will be created in it's own namespace, so let first create the namespace. 
+
+`Cluster` > `Project/Namespaces` > `Create Project`
+
+![create-project-namespace](../images/create-project-namespace.png)
+
+Project Name `loadtest`
+
+![project-loadtest](../images/project-loadtest.png)
+
+At the bottom of the page we see the Project `loadtest` created succesfully
+
+![project-loadtest-created-success](../images/project-loadtest-created-success.png)
+
+Name step is to create namespace with the project. Click on `Create Namespace`
+
+![namespace-loadtest](../images/namespace-loadtest.png)
+
+Namespace `loadtest` created successfully
+
+![namespace-loadtest-created-success](../images/namespace-loadtest-created-success.png)
+
+We are now ready to create the pod which will communicate with bookinfo app. 
 
 Navigate to Rancher rke2-cluster (Cluster) 
 
 `Cluster` > Cluster Dashboard`> Import YAML`  
 
+![import-yaml](../images/import-yaml.png)
+
 Create namespace `loadtest` under Default project in rancher
 
 Import this yaml into Rancher
 
-Edit the file to use the bookinfo url
+Copy the below mention yaml specificiation. 
+
+Sample yaml definition. 
 
 ```
 apiVersion: v1
@@ -148,3 +174,22 @@ spec:
     name: curl
 ```
 
+**Important fields** in the yaml definition 
+
+1 - **Namespace** `loadtest`
+
+2 - **URL** `http://40.80.87.0:31380/productpage`. URL should be within the quotes symbol `" "`
+
+![loadtest-yaml-modified-to-unique-rke-url](../images/loadtest-yaml-modified-to-unique-rke-url-16508833232382.png)
+
+Let's check if the pod is up & running
+
+`Cluster` > `Workload` > `Pod` > Under Namespace select `loadtest` 
+
+![loadtest-pod-success](../images/loadtest-pod-success.png)
+
+With this we have successfully completed step 2 of the workshop.  
+
+To summarize, we have deployed the micro-services, enabled Istio, injected Istio sidecars to our application, configured Istio Gateway & destination rule to access application and it's application traffic. Finally we have deployed a container to access the application. 
+
+In the next steps, we will observe the application traffic via Kiali & Jaeger. 
