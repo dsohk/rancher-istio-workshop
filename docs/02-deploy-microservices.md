@@ -88,17 +88,41 @@ Sample output below
 
 ![bookinfo-app-exposed-via-istio](../images/bookinfo-app-exposed-via-istio.png)
 
-
-
-
+Congratulation! you have successfully deployed the BookInfo App. 
 
 ## Step 4 - Deploy destination rules
 
-1. Navigate to this url: https://github.com/istio/istio/blob/master/samples/bookinfo/networking/destination-rule-all.yaml
+In this steps, we are setting up some destination rule which will allow traffic between the various pod used by Bookinfo app. 
 
-2. copy the content into Rancher import yaml dialog window
+Navigate to Rancher rke2-cluster (Cluster) 
+
+`Cluster` > Cluster Dashboard`> Import YAML`  
+
+![import-yaml](../images/import-yaml.png)
+
+Navigate to this url: https://github.com/istio/istio/blob/master/samples/bookinfo/networking/destination-rule-all.yaml
+
+copy the content into Rancher import yaml dialog window and hit `Import`
+
+![destinationrule](../images/destinationrule.png)
+
+Destination Rule created, you can hit `close`
+
+![destinationrule-created-active](../images/destinationrule-created-active.png)
+
+![Istio-desintationrule](../images/Istio-desintationrule.png)
+
+
+
+
+
+
 
 ## Step 5 - deploy traffic generation app
+
+Navigate to Rancher rke2-cluster (Cluster) 
+
+`Cluster` > Cluster Dashboard`> Import YAML`  
 
 Create namespace `loadtest` under Default project in rancher
 
