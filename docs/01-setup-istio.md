@@ -155,3 +155,7 @@ Choose Default namespace, click `3 dots vertical line` and click on `Enable Auto
 Upon success you move your mouse on `Labels` you will see the injection successfully done 
 
 ![rke2cluster1-istio-kiali-enable-auto-injection-success](../images/rke2cluster1-istio-kiali-enable-auto-injection-success.png)
+
+To summarize, we have successfully deployed Monitoring and Istio.
+
+In the next exercise, we will deploy our micro-services application to take advantage of Istio. 
