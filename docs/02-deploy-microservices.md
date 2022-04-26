@@ -161,7 +161,9 @@ At the cluster dashboard view, go to the option `Import Yaml` at the top right h
 
 ![import-yaml](../images/import-yaml.png)
 
-Copy the contents of the yaml specificiation below into Rancher import yaml dialog window
+Copy the contents of the sample yaml definition below into Rancher import yaml dialog window.
+Ensure that `loadtest` is being selected as the Default Namespace. Click on Import to start the deployment.
+
 Sample yaml definition. 
 
 ```
