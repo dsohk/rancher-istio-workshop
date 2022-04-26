@@ -4,7 +4,7 @@ Jaeger is used for doing distributed tracing.
 
 Open Jaeger UI
 
-Search: `service` `=` `isto-ingressgateway:istio-system`
+Search: `service` `=` `istio-ingressgateway:istio-system`
 
 Click `Find Traces` button
 
