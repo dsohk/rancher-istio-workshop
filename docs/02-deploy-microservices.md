@@ -30,19 +30,19 @@ Ensure that "default" is being selected as the "Default Namespace". Click on "Im
 
 ![app-bookinfo-yaml](../images/app-bookinfo-yaml.png)
 
-This will create various Kubernetes Objects as decribed in the the deployment yaml for BookInfo Application. You can see deployment is updating which indicates container are getting provisioned. Within 1 mins you should be able to the see the deployment rollout successfully. 
+This will create various Kubernetes Objects as decribed in the the deployment yaml for BookInfo Application. You can see deployment is updating which indicates container are getting provisioned. Within 1 min you should be able to the see the deployment rollout successfully. 
 
 ![14-kuberbetes-objects-from-deployment](../images/14-kuberbetes-objects-from-deployment.png)
 
-`Cluster` > `Workload` > `Deployments`  select appropriate namespace `default`
+You can check out the various kubernetes objects that have been deployed. For Deployments, you can go to `Workload` > `Deployments`. You can also filter the namespace accordingly from the drop-down menu at the top right hand corner.. For this case, you can select the namespace `default'.
 
 ![deployment-bookinfo-ready](../images/deployment-bookinfo-ready.png)
 
-`Cluster` > `Workload` > `Pods`  select appropriate namespace `default`
+For Pods, you can go to `Workload` > `Pods`. Again, you can select the namespace `default`.
 
 ![deployment-pods](../images/deployment-pods.png)
 
-`Cluster` > `Workload`  `Services` > select appropriate namespace `default`
+For Services, you can go to 'Workload` > `Services`. You can also select the namespace `default`
 
 ![deployment-services](../images/deployment-services.png)
 
