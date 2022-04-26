@@ -71,7 +71,7 @@ Resource Limits
 
 * `Requested Memory = 500Mi`
 
-You can leave the rest as default. Click on the "Install" button to continue.
+You can leave the rest of the options as default. Click on the "Install" button to continue.
 
 ![01-rk2cluster1-monitoring-adjusting-promethus-value](../images/01-rk2cluster1-monitoring-adjusting-promethus-value.png)
 
@@ -87,7 +87,7 @@ Once Monitoring is installed, you will click on the newly available `Monitoring`
 
 ## Step 3 - Setup Istio with Rancher
 
-After Monitoring add-on is installed, navigate to the `Cluster Tools` page, this time choose `Istio` and click on `Install` button.
+After Monitoring add-on is installed, navigate to the `Cluster Tools` page, look out for `Istio` and click on its `Install` button.
 
 ![01-rke2cluster1-dashboard-cluster-tools](../images/01-rke2cluster1-dashboard-cluster-tools.png)
 
@@ -96,10 +96,12 @@ Choose `System` in `Install Into Project` selection box, and then click `Next`.
 ![01-rke2cluster1-istio-install-project-selection-value-default](../images/01-rke2cluster1-istio-install-project-selection-value-default.png)
 
 On the `components` tab, check the box next to `Enabled CNI` and ` Enable Jaeger Tracing` to select the appropriate Istio components. 
+You can leave the rest of the options as default.
 
 ![01-rke2cluster1-istio-component-selections](../images/01-rke2cluster1-istio-component-selections.png)
 
-On the `Custom Overlay File` tab, add a custom overlay file like below to specify the path for `cniBinDir` and `cniConfDir`.
+On the `Custom Overlay File` tab, add a custom overlay file as shown below to specify the path for `cniBinDir` and `cniConfDir`.
+You can append the content of the yaml file to the default configuration shown on the tab.
 
 See Notes: https://rancher.com/docs/rancher/v2.6/en/istio/configuration-reference/rke2/
 
@@ -143,5 +145,5 @@ On successfully install of Istio, you should see below success message.
 
 ![01-rkecluster2-cluster-tools-istio-install-completed](../images/01-rkecluster2-cluster-tools-istio-install-completed.png)
 
-With this, you should now have Istio and Monitoring apear as left side menu pane. 
+With this, you should now have both Istio and Monitoring apear as left side menu pane. 
 
