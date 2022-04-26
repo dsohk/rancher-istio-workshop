@@ -70,13 +70,13 @@ You can change the traffic metric refresh rate by adjusting the value of your ch
 
 ![Istio-traffice-refresh-rate-options](../images/Istio-traffice-refresh-rate-options.png)
 
-New value
+A new value has been applied
 
 ![istio-traffic-refresh-changes](../images/istio-traffic-refresh-changes.png)
 
 
 
-Application Page 
+You can also play around with the different options on the left menu. Select `Application Page`
 
 ![Istio-Application](../images/Istio-Application.png)
 
@@ -86,7 +86,7 @@ If you click on `productpage` under `Name` column you will see the traffic flow.
 
 
 
-Under `Workload` if you click on `ratings-v1`,
+From the left menu, select `Workload` and then under `Name` column, click on `ratings-v1`,
 
 ![workload-rating1](../images/workload-rating1.png)
 
@@ -94,9 +94,11 @@ Under `Workload` if you click on `ratings-v1`,
 
 
 
-Similarly Under `Service` Tab if you click on `productpage` under `Name` column you will see the Service flow. ![istio-service-bookinfo-flow](../images/istio-service-bookinfo-flow.png)
+Similarly, from the left menu, select `Service`, and then clicj on `productpage` under `Name` column, you will see the Service flow. 
 
-Finally, under `Istio Config` tab you will see all Istio component that you can view & configure. 
+![istio-service-bookinfo-flow](../images/istio-service-bookinfo-flow.png)
+
+Finally, from the left menu, select `Istio Config` and you will see all Istio component that you can view & configure. 
 
 ![Istio-config](../images/Istio-config.png)
 
