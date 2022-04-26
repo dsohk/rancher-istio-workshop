@@ -17,19 +17,20 @@ Before we deploy microservices app into default namespace, we need to make sure 
 
 ## Step 2 - Deploy the microservices application
 
-Navigate to Rancher rke2-cluster (Cluster) 
+From the Rancher server, navigate to the cluster "rke2-cluster"
 
-`Cluster` > Cluster Dashboard`> Import YAML`  
+At the cluster dashboard view, go to the option "Import Yaml" at the top right hand corner.
 
 ![import-yaml-app-bookinfo](../images/import-yaml-app-bookinfo.png)
 
 Open a browser tab, navigate to this URL: https://github.com/istio/istio/blob/master/samples/bookinfo/platform/kube/bookinfo.yaml
 
 Copy the content into Rancher import yaml dialog window.
+Ensure that "default" is being selected as the "Default Namespace". Click on "Import" to start the deployment.
 
 ![app-bookinfo-yaml](../images/app-bookinfo-yaml.png)
 
-This will create various Kubernetes Objects as per the deployment yaml for BookInfo Application. You can see deployment is updating which indicated container are getting provisioned. Within 1 mins or less you should be able to the see the deployment rollout successfully. 
+This will create various Kubernetes Objects as decribed in the the deployment yaml for BookInfo Application. You can see deployment is updating which indicates container are getting provisioned. Within 1 mins you should be able to the see the deployment rollout successfully. 
 
 ![14-kuberbetes-objects-from-deployment](../images/14-kuberbetes-objects-from-deployment.png)
 
