@@ -46,13 +46,13 @@ Next we can also see the traffic `productpage` to `reviews`. We can tell that th
 
 
 
-review to rating communication
+The screenshot below shows the communication between `reviews` to `rating`.
 
 ![review-2-rating](../images/review-2-rating.png)
 
 
 
-Various different Layout for visibility. You can click on 3 topology like icon to change the layout.
+You can also toggle between 3 topologies to change the layout visualization.
 
 `Default Layout`
 
