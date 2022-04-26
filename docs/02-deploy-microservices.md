@@ -56,7 +56,6 @@ However, for this workshop, we would be using Istio, which will make use of it's
 In order for the application to take advantage of Istio, we will need to create an Istio Gateway Service for the BookInfo Application. 
 
 From the Rancher server, navigate to the cluster "rke2-cluster"
-
 At the cluster dashboard view, go to the option "Import Yaml" at the top right hand corner. 
 
 ![import-yaml-app-bookinfo](../images/import-yaml-app-bookinfo.png)
@@ -110,11 +109,10 @@ Congratulation! you have successfully deployed the BookInfo App.
 
 ## Step 4 - Deploy destination rules
 
-In this steps, we are setting up some destination rule which will allow traffic between the various pod used by Bookinfo app. 
+We will be setting up destination rules which will allow traffic to happen between the various pod used by Bookinfo app. 
 
-Navigate to Rancher rke2-cluster (Cluster) 
-
-`Cluster` > Cluster Dashboard`> Import YAML`  
+From the Rancher server, navigate to the cluster "rke2-cluster"
+At the cluster dashboard view, go to the option "Import Yaml" at the top right hand corner. 
 
 ![import-yaml](../images/import-yaml.png)
 
