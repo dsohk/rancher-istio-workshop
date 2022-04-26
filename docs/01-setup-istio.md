@@ -64,7 +64,7 @@ Once Monitoring is installed, you will see the `Monitoring` as available left ha
 
 
 
-## Steo 3 - Setup Istio with Rancher
+## Step 3 - Setup Istio with Rancher
 
 After Monitoring add-on is installed, navigate to the `Cluster Tools` page, this time choose `Istio` and click on `Install` button.
 
