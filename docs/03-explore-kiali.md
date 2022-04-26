@@ -8,11 +8,11 @@ To access Kiali,
 
 ![01-rke2cluster-istio-kiali-and-jaeger](../images/01-rke2cluster-istio-kiali-and-jaeger.png)
 
-We have only configured Istio with namespace `default` and hence you will only see Istio 
+We have only configured Istio on namespace `default`, hence this will be the only namespace that you will see a green tick besides `Istio Config`
 
 ![kiali-ui-Istio-configured-for-default-ns](../images/kiali-ui-Istio-configured-for-default-ns.png)
 
-Click on 3 Vertial dots in the namespace `Default`  
+Click on 3 Vertial dots in the namespace `default`  
 
 ![Istio-Graph](../images/Istio-Graph.png)
 
