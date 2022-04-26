@@ -84,19 +84,17 @@ We now have our Gateway Services for Istio set-up. We now need to utilze it.
 
 Let's find out the URL for our Gateway Services. 
 
-`Cluster Explorer` > `Services` > switch to `Isito-system namespace`
+From the menu on the left, select `Services Discovery` > `Services'. Select the namespace `Istio-system`
 
 ![services-istio-istio-ingressgateway](../images/services-istio-istio-ingressgateway.png)
 
-Click on the Name `istio-ingressgateway` and take a note of the `NodePort` as we will need it. As sample my `NodePort` value is `31380`
-
-You will have your own respective `NodePort` so make a note of the port. The value will be used in next step. 
+Click on the Name `istio-ingressgateway` and select the tab `Ports`. Take note of the `NodePort` corresponding to `http2` and take it down. Typically, `http2` would be mapped to the `NodePort` value `31380`. This value will be used in the next step.
 
 ![services-istio-ingress-gateway-nodeport](../images/services-istio-ingress-gateway-nodeport.png)
 
-Next things is will will need the Public IP of your RKE2 downstream cluster.  
+Next, you will need to have the Public IP of your RKE2 downstream cluster.  
 
-The IP has been already shared with you.  Look for `neuvector_webui_url` . Append the `Nodeport` & `productpage`. URL should look like below. 
+This IP has already been shared with you. Look out for the IP corresponding to `neuvector_webui_url` . Append the `Nodeport` & `productpage` accordingly. The final URL should look like below. 
 
 URL = http://<public ip from neuvector>:<Nodeport>/productpage. 
 
