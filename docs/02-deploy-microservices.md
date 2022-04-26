@@ -48,7 +48,7 @@ For Services, you can go to `Service Discovery` > `Services`. You can also selec
 
 
 
-## Step 2 - Deploy Istio gateway for BookInfo application
+## Step 3 - Deploy Istio gateway for BookInfo application
 
 In the previous step, we were looking at the Services that has been deployed when we installed the Bookinfo application. These Services would typically make use of the Ingress Controller in order to be exposed externally outside of the cluster. 
 However, for this workshop, we would be using Istio, which will make use of it's own Load Balancer to route the Istio traffic instead. 
@@ -76,7 +76,7 @@ From the menu on the left, select `Istio` >  `Gateways`
 
 
 
-## Step 3 - Find the BookInfo Gateway URL
+## Step 4 - Find the BookInfo Gateway URL
 
 We now have our Gateway Services for Istio set-up. We now need to utilze it. 
 
@@ -96,7 +96,7 @@ This IP has already been shared with you. Look out for the IP corresponding to `
 
 `http://40.80.87.0:31380/productpage`
 
-**IMPORTANT: You must take down your unique URL. It will be required in STEP 5**
+**IMPORTANT: You must take down your unique URL. It will be required in STEP 6**
 
 Sample output below
 
@@ -106,7 +106,7 @@ Congratulation! you have successfully deployed the BookInfo App.
 
 
 
-## Step 4 - Deploy destination rules
+## Step 5 - Deploy destination rules
 
 We will be setting up destination rules which will allow traffic to happen between the various pod used by Bookinfo app. 
 
@@ -132,7 +132,7 @@ We have successfully deployed the destination rule.
 
 Next step is to generate traffic to the bookinfo app. In order to acheive this we will be deploying a pod which will be polling the BookInfo app every second.
 
-## Step 5 - deploy traffic generation app
+## Step 6 - deploy traffic generation app
 
 For simplicity sake, we will deploy a simple pod which will curl into BookInfo app. The pod will be created in it's own namespace, so let first create a project and a namespace. 
 
@@ -164,7 +164,7 @@ At the cluster dashboard view, go to the option `Import Yaml` at the top right h
 ![import-yaml](../images/import-yaml.png)
 
 Copy the contents of the sample yaml definition below into Rancher import yaml dialog window.
-**IMPORTANT: You must ensure that the value of URL is modified according to the one that you have taken down in STEP 3.
+**IMPORTANT: You must ensure that the value of URL is modified according to the one that you have taken down in STEP 4.
 This URL must be within the quotes symbol `" "`**
 
 Ensure that `loadtest` is being selected as the `Default Namespace`. Click on `Import` to start the deployment.
