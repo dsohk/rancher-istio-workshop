@@ -25,7 +25,7 @@ At the cluster dashboard view, go to the option `Import Yaml` at the top right h
 
 Open a browser tab, navigate to this URL: https://github.com/istio/istio/blob/master/samples/bookinfo/platform/kube/bookinfo.yaml
 
-Copy the content into Rancher import yaml dialog window.
+Copy the contents into Rancher import yaml dialog window.
 Ensure that `default` is being selected as the `Default Namespace`. Click on `Import` to start the deployment.
 
 ![app-bookinfo-yaml](../images/app-bookinfo-yaml.png)
@@ -62,7 +62,7 @@ At the cluster dashboard view, go to the option `Import Yaml` at the top right h
 
 Navigation to this URL: https://github.com/istio/istio/blob/master/samples/bookinfo/networking/bookinfo-gateway.yaml
 
-Copy the content into Rancher import yaml dialog window.
+Copy the contents into Rancher import yaml dialog window.
 Ensure that `default` is being selected as the `Default Namespace`. Click on `Import` to start the deployment.
 
 ![gateway-yaml-bookinfo-app](../images/gateway-yaml-bookinfo-app.png)
@@ -132,13 +132,13 @@ Next step is to generate traffic to the bookinfo app. In order to acheive this w
 
 ## Step 5 - deploy traffic generation app
 
-For simplicity sake, we will deploy a simple pod which will curl into bookinfo app. The pod will be created in it's own namespace, so let first create the namespace. 
+For simplicity sake, we will deploy a simple pod which will curl into BookInfo app. The pod will be created in it's own namespace, so let first create a project and a namespace. 
 
 `Cluster` > `Project/Namespaces` > `Create Project`
 
 ![create-project-namespace](../images/create-project-namespace.png)
 
-Project Name `loadtest`
+Name the project `loadtest` and then click on `create`
 
 ![project-loadtest](../images/project-loadtest.png)
 
@@ -150,24 +150,18 @@ Name step is to create namespace with the project. Click on `Create Namespace`
 
 ![namespace-loadtest](../images/namespace-loadtest.png)
 
-Namespace `loadtest` created successfully
+Name the namespace `loadtest` and then click on `create`
 
 ![namespace-loadtest-created-success](../images/namespace-loadtest-created-success.png)
 
 We are now ready to create the pod which will communicate with bookinfo app. 
 
-Navigate to Rancher rke2-cluster (Cluster) 
-
-`Cluster` > Cluster Dashboard`> Import YAML`  
+From the Rancher server, navigate to the cluster `rke2-cluster`
+At the cluster dashboard view, go to the option `Import Yaml` at the top right hand corner. 
 
 ![import-yaml](../images/import-yaml.png)
 
-Create namespace `loadtest` under Default project in rancher
-
-Import this yaml into Rancher
-
-Copy the below mention yaml specificiation. 
-
+Copy the contents of the yaml specificiation below into Rancher import yaml dialog window
 Sample yaml definition. 
 
 ```
