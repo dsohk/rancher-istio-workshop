@@ -42,7 +42,7 @@ For Pods, you can go to `Workload` > `Pods`. Again, you can select the namespace
 
 ![deployment-pods](../images/deployment-pods.png)
 
-For Services, you can go to 'Workload` > `Services`. You can also select the namespace `default`
+For Services, you can go to `Workload` > `Services`. You can also select the namespace `default`
 
 ![deployment-services](../images/deployment-services.png)
 
