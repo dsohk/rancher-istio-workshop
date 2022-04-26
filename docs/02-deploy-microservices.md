@@ -75,7 +75,6 @@ From the menu on the left, select `Istio` >  `Gateways`
 
 
 
-The gateway URL = http://<public ip from neuvector>:<http2 port>
 
 ## Step 3 - Find the BookInfo Gateway URL
 
@@ -87,15 +86,13 @@ From the menu on the left, select `Services Discovery` > `Services`. Select the 
 
 ![services-istio-istio-ingressgateway](../images/services-istio-istio-ingressgateway.png)
 
-Click on the Name `istio-ingressgateway` and select the tab `Ports`. Take note of the `NodePort` corresponding to `http2` and take it down. Typically, `http2` would be mapped to the `NodePort` value `31380`. This value will be used in the next step.
+Click on the Name `istio-ingressgateway` and select the tab `Ports`. Take note of the `NodePort` corresponding to `http2` and jot it down. Typically, `http2` would be mapped to the `NodePort` value `31380`. This value will be used in the next step.
 
 ![services-istio-ingress-gateway-nodeport](../images/services-istio-ingress-gateway-nodeport.png)
 
 Next, you will need to have the Public IP of your RKE2 downstream cluster.  
 
 This IP has already been shared with you. Look out for the IP corresponding to `neuvector_webui_url` . Append the `Nodeport` & `productpage` accordingly. The final URL should look like below. 
-
-URL = http://<public ip from neuvector>:<Nodeport>/productpage. 
 
 `http://40.80.87.0:31380/productpage`
 
