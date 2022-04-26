@@ -96,6 +96,8 @@ This IP has already been shared with you. Look out for the IP corresponding to `
 
 `http://40.80.87.0:31380/productpage`
 
+**IMPORTANT: You must take down your unique URL. It will be required in STEP 5**
+
 Sample output below
 
 ![bookinfo-app-exposed-via-istio](../images/bookinfo-app-exposed-via-istio.png)
@@ -142,7 +144,7 @@ Name the project `loadtest` and then click on `create`
 
 ![project-loadtest](../images/project-loadtest.png)
 
-At the bottom of the page we see the Project `loadtest` created succesfully
+At the bottom of the page we see the Project `loadtest` created successfully
 
 ![project-loadtest-created-success](../images/project-loadtest-created-success.png)
 
@@ -162,9 +164,11 @@ At the cluster dashboard view, go to the option `Import Yaml` at the top right h
 ![import-yaml](../images/import-yaml.png)
 
 Copy the contents of the sample yaml definition below into Rancher import yaml dialog window.
-Ensure that `loadtest` is being selected as the Default Namespace. Click on Import to start the deployment.
+**IMPORTANT: You must ensure that the value of URL is modified according to the one that you have taken down in STEP 3.
+This URL must be within the quotes symbol `" "`**
+Ensure that `loadtest` is being selected as the `Default Namespace`. Click on `Import` to start the deployment.
 
-Sample yaml definition. 
+`Sample yaml definition` 
 
 ```
 apiVersion: v1
