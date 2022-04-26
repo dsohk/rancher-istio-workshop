@@ -1,6 +1,21 @@
-# LAB 2 - Deploy Microservices
+# Lab 2 - Deploy Sample BookInfo Microservices
 
-## Step 1 - Deploy the microservices application
+With Istio (Service Mesh) and Prometheus/Grafana (Monitoring) components deployed on the RKE2, let's deploy a sample microservices-based application on to the `default` namespace of this cluster.
+
+
+
+## Step 1 - Enable Auto-injection in default namespace
+
+Before we deploy microservices app into default namespace, we need to make sure Istio can automatically inject an envoy proxy sidecar sitting next to teach cicroservices. To achieve this, we need to enable auto-injection.
+
+1. Navigate to `Istio` on the left pane menu.
+
+2. Choose `Kiali` application
+3. You will be presented a home page 
+
+
+
+## Step 2 - Deploy the microservices application
 
 Navigate to Rancher rke2-cluster (Cluster) 
 
@@ -32,7 +47,7 @@ This will create various Kubernetes Objects as per the deployment yaml for BookI
 
 
 
-## Step 2 - Deploy gateways
+## Step 2 - Deploy Istio gateway for BookInfo app
 
 In the previous step, we were looking at the Service for the application which would be typically taking advantage of Ingress Controller to expose as Service, however we are using Istio. Istio uses it's own Load Balancer to route the Istio traffic. 
 
@@ -60,7 +75,7 @@ Copy the content into Rancher import yaml dialog window.
 
 The gateway URL = http://<public ip from neuvector>:<http2 port>
 
-## Step 3 - find the gateway URL
+## Step 3 - Find the BookInfo Gateway URL
 
 We now have our Gateway Services for Istio set-up. We now need to utilze it. 
 
@@ -89,6 +104,8 @@ Sample output below
 ![bookinfo-app-exposed-via-istio](../images/bookinfo-app-exposed-via-istio.png)
 
 Congratulation! you have successfully deployed the BookInfo App. 
+
+
 
 ## Step 4 - Deploy destination rules
 

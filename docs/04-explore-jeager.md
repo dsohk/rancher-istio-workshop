@@ -1,6 +1,6 @@
 # Explore Jeager
 
-Jaeger is used for doing API tracing. 
+Jaeger is used for doing distributed tracing. 
 
 Open Jaeger UI
 

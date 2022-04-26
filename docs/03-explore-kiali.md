@@ -1,6 +1,6 @@
-# Explore Kiali
+# Lab 3 - Visualize Your Service Mesh
 
-Show graph with traffic animation
+Once you have deployed the microservices app into `default` namespace and the traffic generator has been running to constantly visiting the application endpoint, we can make use of Kiali to visualize your service mesh. 
 
 To access Kiali, 
 

@@ -1,20 +1,37 @@
-# Lab 1 - Setup Istio
+# Lab 1 - Deploy Monitoring and Istio onto RKE2 cluster
+
+In this exercise, we are going to enable detailed monitoring and service mesh capabilities on a RKE2 cluster. This is very simple with Rancher's cluster tools. It should take about 5 minutes to complete. Let's dive in now.
 
 
 
-## Step 1 - Access your Rancher Cluster
+## Before We Begin
 
-Access your Rancher Server using the URL & credentials provided (over email or other communication.....). Click on advance `Proceed to RancherIP.sslip.io`
+Before we start the lab, please make sure you have been provided with the following lab access credentials from the instructor. Each participant should have their own unique environment and credentials.
 
-![01-rancher-url](../images/01-rancher-url.png)
+| Item                              | Value                                  |
+| --------------------------------- | -------------------------------------- |
+| Rancher Server URL                | https://rancher.xx.xx.xx.xx.sslip.io   |
+| Rancher Server Username           | admin                                  |
+| Rancher Server Bootstrap Password | (system assigned strong password)      |
+| Neuvector URL                     | https://neuvector.yy.yy.yy.yy.sslip.io |
+| Neuvector Username                | admin                                  |
+| Neuvector Password                | admin                                  |
 
-![01-rancher-url-insecure-message](../images/01-rancher-url-insecure-message.png)
 
-You will be presented with Rancher Server Login Page. Enter the Rancher Credentials.
+
+## Step 1 - Access your RKE2 Cluster via Rancher
+
+With a Google Chrome browser, navigate to the Rancher Server URL (https://rancher.xx.xx.xx.xx.sslip.io). You will then be shown an invalid SSL certificate error message. There are 2 ways to by pass this error, you can choose to (1) type the word `thisisunsafe` on this page to bypass the warning message, or (2) you can also click on the **Advanced** button and click the Proceed to https://rancher.xx.xx.xx.xx.sslip.io hyperlink to continue. 
+
+You will then be led to Rancher Server login page. Enter the admin credentials to login. When it's successful, you will be landing on the Rancher Home page. 
 
 ![01-rancher-credentials](../images/01-rancher-credentials-16507073634331.png)
 
-2. In Rancher Home page, click the `3-line` icon next to Rancher logo on the top left corner. Click on `Explore Cluster` > `Cluster Management`
+
+
+In Rancher Home page, click the `3-line` icon next to Rancher logo on the top left corner. 
+
+Click on `Explore Cluster` > `Cluster Management`
 
 ![01-rancher-cluster-management-rke2cluster1](../images/01-rancher-cluster-management-rke2cluster1.png)
 
@@ -22,9 +39,13 @@ Click on `Explore` button on the right hand for Cluster `rke2-cluster1`
 
 ![](../images/01-rancher-cluster-management-rke2cluster1-explore.png)
 
-You will be presented with `Cluster Dashboard` view for Cluster `rke2-cluster1`
+You will then be presented with `Cluster Dashboard` view for Cluster `rke2-cluster1`
 
 ![01-rke2cluster1-cluster-dashboard](../images/01-rke2cluster1-cluster-dashboard.png)
+
+
+
+
 
 ## Step 2 - Enable monitoring on RKE2
 
@@ -42,13 +63,13 @@ Choose `System` in `Install Into Project` selection box, and then click `Next`.
 
 ![01-rke2cluster1-monitoring-selecting-project-default](../images/01-rke2cluster1-monitoring-selecting-project-default.png)
 
-Ideally you will leave the Prometheus values default, however for our lab since we are using 4 vCPU's let adjust our resource request as below
+Ideally you will leave the Prometheus values as default, however for our lab we need to adjust our resource request as below
 
 Resource Limits 
 
-`Requested CPU = 250m`
+* `Requested CPU = 250m`
 
-`Requested Memory = 500Mi`
+* `Requested Memory = 500Mi`
 
 Rest all default
 
@@ -122,40 +143,5 @@ On successfully install of Istio, you should see below success message.
 
 ![01-rkecluster2-cluster-tools-istio-install-completed](../images/01-rkecluster2-cluster-tools-istio-install-completed.png)
 
-You should now see `Istio` on left hand side menu pane & if you click on the drop down under Istio you should see `Kiali` and `Jaeger`
+With this, you should now have Istio and Monitoring apear as left side menu pane. 
 
-![01-rke2cluster-istio-kiali-and-jaeger](../images/01-rke2cluster-istio-kiali-and-jaeger.png)
-
-You can click on `Kiali` and `Jaeger` to look at thier respective dashboard
-
-![01-rke2cluster2-istio-kiali-Ui](../images/01-rke2cluster2-istio-kiali-Ui.png)
-
-![01-rke2cluster1-istio-jaeger-ui](../images/01-rke2cluster1-istio-jaeger-ui.png)
-
-# 
-
-## Step 4 - Open Grafana and check Istio monitoring
-
-Click on `Monitoring` and click on `Grafana` . 
-
-Under Grafana Dashboards, you will see various Istio Dashboard options to view (Istio ControlPlane Dashboard,  Istio Mesh Dashboard, Istio Performance Dashboard, Istio Service Dashboard, etc...... )
-
-![01-rke1cluster1-monitoring-dashboard-istio-options](../images/01-rke1cluster1-monitoring-dashboard-istio-options.png)
-
-Next step is to enable Istio sidecare injection in the namespace where we would like to run our application. 
-
-## Step 5 - Enable sidecar injection in default workload
-
-Click `Istio` on the left pane menu and Click `Kiali`
-
-Choose Default namespace, click `3 dots vertical line` and click on `Enable Auto Injection`
-
-![01-rke2cluster1-istio-kiali-enable-auto-injection](../images/01-rke2cluster1-istio-kiali-enable-auto-injection.png)
-
-Upon success you move your mouse on `Labels` you will see the injection successfully done 
-
-![rke2cluster1-istio-kiali-enable-auto-injection-success](../images/rke2cluster1-istio-kiali-enable-auto-injection-success.png)
-
-To summarize, we have successfully deployed Monitoring and Istio.
-
-In the next exercise, we will deploy our micro-services application to take advantage of Istio. 
