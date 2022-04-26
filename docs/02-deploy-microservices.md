@@ -84,7 +84,7 @@ We now have our Gateway Services for Istio set-up. We now need to utilze it.
 
 Let's find out the URL for our Gateway Services. 
 
-From the menu on the left, select `Services Discovery` > `Services'. Select the namespace `Istio-system`
+From the menu on the left, select `Services Discovery` > `Services`. Select the namespace `Istio-system`
 
 ![services-istio-istio-ingressgateway](../images/services-istio-istio-ingressgateway.png)
 
