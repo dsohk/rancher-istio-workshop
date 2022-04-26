@@ -15,7 +15,7 @@ Before we deploy microservices app into default namespace, we need to make sure 
 
 
 
-## Step 2 - Deploy the microservices application
+## Step 2 - Deploy the microservices application called BookInfo
 
 From the Rancher server, navigate to the cluster "rke2-cluster"
 
@@ -34,7 +34,7 @@ This will create various Kubernetes Objects as decribed in the the deployment ya
 
 ![14-kuberbetes-objects-from-deployment](../images/14-kuberbetes-objects-from-deployment.png)
 
-You can check out the various kubernetes objects that have been deployed. For Deployments, you can go to `Workload` > `Deployments`. You can also filter the namespace accordingly from the drop-down menu at the top right hand corner.. For this case, you can select the namespace `default'.
+You can check out the various kubernetes objects that have been deployed. For Deployments, you can go to `Workload` > `Deployments`. You can also filter the namespace accordingly from the drop-down menu at the top right hand corner. For this case, you can select the namespace `default`.
 
 ![deployment-bookinfo-ready](../images/deployment-bookinfo-ready.png)
 
@@ -42,17 +42,18 @@ For Pods, you can go to `Workload` > `Pods`. Again, you can select the namespace
 
 ![deployment-pods](../images/deployment-pods.png)
 
-For Services, you can go to `Workload` > `Services`. You can also select the namespace `default`
+For Services, you can go to `Service Discovery` > `Services`. You can also select the namespace `default`
 
 ![deployment-services](../images/deployment-services.png)
 
 
 
-## Step 2 - Deploy Istio gateway for BookInfo app
+## Step 2 - Deploy Istio gateway for BookInfo application
 
-In the previous step, we were looking at the Service for the application which would be typically taking advantage of Ingress Controller to expose as Service, however we are using Istio. Istio uses it's own Load Balancer to route the Istio traffic. 
+In the previous step, we were looking at the Services that has been deployed when we installed the Bookinfo application. These Services would typically make use of the Ingress Controller in order to be exposed externally outside of the cluster. 
+However, for this workshop, we would be using Istio, which will make use of it's own Load Balancer to route the Istio traffic instead. 
 
-For the application to take advantage of Istio, we will need to create an Istio Gateways Service for our BookInfo Application. 
+In order for the application to take advantage of Istio, we will need to create an Istio Gateway Service for the BookInfo Application. 
 
 Navigate to Rancher rke2-cluster (Cluster) 
 
