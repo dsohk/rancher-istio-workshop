@@ -55,19 +55,20 @@ However, for this workshop, we would be using Istio, which will make use of it's
 
 In order for the application to take advantage of Istio, we will need to create an Istio Gateway Service for the BookInfo Application. 
 
-Navigate to Rancher rke2-cluster (Cluster) 
+From the Rancher server, navigate to the cluster "rke2-cluster"
 
-`Cluster` > Cluster Dashboard`> Import YAML`  
+At the cluster dashboard view, go to the option "Import Yaml" at the top right hand corner. 
 
 ![import-yaml-app-bookinfo](../images/import-yaml-app-bookinfo.png)
 
 Navigation to this URL: https://github.com/istio/istio/blob/master/samples/bookinfo/networking/bookinfo-gateway.yaml
 
 Copy the content into Rancher import yaml dialog window.
+Ensure that "default" is being selected as the "Default Namespace". Click on "Import" to start the deployment.
 
 ![gateway-yaml-bookinfo-app](../images/gateway-yaml-bookinfo-app.png)
 
-`Cluster` > `Istio` >  `Gateways` 
+From the menu on the left, select `Istio` >  `Gateways` 
 
 ![cluster-istio-gateways](../images/cluster-istio-gateways.png)
 
