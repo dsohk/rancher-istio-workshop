@@ -101,7 +101,7 @@ You can leave the rest of the options as default.
 ![01-rke2cluster1-istio-component-selections](../images/01-rke2cluster1-istio-component-selections.png)
 
 On the `Custom Overlay File` tab, add a custom overlay file as shown below to specify the path for `cniBinDir` and `cniConfDir`.
-You can append the content of the yaml file to the default configuration shown on the tab.
+You can append the contents of the yaml file to the default configuration shown on the tab.
 
 See Notes: https://rancher.com/docs/rancher/v2.6/en/istio/configuration-reference/rke2/
 
