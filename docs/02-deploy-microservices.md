@@ -13,7 +13,7 @@ Before we deploy microservices app into default namespace, we need to make sure 
 2. Choose `Kiali` application
 3. You will be presented a home page 
 
-
+**Missing AUTO INJECTION PROCEDURES!!!**
 
 ## Step 2 - Deploy the microservices application called BookInfo
 
