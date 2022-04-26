@@ -30,6 +30,6 @@ You can further expand on individual services. Example below.
 
 Thus you can look into details to understand how to shorten time spend on individual service and also at component level 
 
-You can also toggle to `system architecture` page > `dag` page to have an overview. 
+You can also toggle to `system architecture` page > `dag` page to have an overview. This shows how each micro-services works.
 
 ![jaeger-system-architecture-dag](../images/jaeger-system-architecture-dag.png)
