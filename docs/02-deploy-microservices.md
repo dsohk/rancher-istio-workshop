@@ -146,7 +146,7 @@ At the bottom of the page we see the Project `loadtest` created successfully
 
 ![project-loadtest-created-success](../images/project-loadtest-created-success.png)
 
-Name step is to create namespace with the project. Click on `Create Namespace`
+Next step is to create namespace with the project. Click on `Create Namespace`
 
 ![namespace-loadtest](../images/namespace-loadtest.png)
 
@@ -161,6 +161,7 @@ From the Rancher server, ensure that you are at `rke2-cluster` and then go to th
 ![import-yaml](../images/import-yaml.png)
 
 Copy the contents of the sample yaml definition below into Rancher import yaml dialog window.
+
 **IMPORTANT: You must ensure that the value of URL is modified according to the one that you have taken down in STEP 4.
 This URL must be within the quotes symbol `" "`**
 
@@ -188,7 +189,7 @@ spec:
 
 ![loadtest-yaml-modified-to-unique-rke-url](../images/loadtest-yaml-modified-to-unique-rke-url-16508833232382.png)
 
-Let's check if the pod is up & running by going to `Workload` > `Pods`. You might need to select the namespace `loadtest`.
+Let's check if the pod is up and running by going to `Workload` > `Pods`. You might need to select the namespace `loadtest`.
 
 ![loadtest-pod-success](../images/loadtest-pod-success.png)
 
