@@ -17,16 +17,16 @@ Before we deploy microservices app into default namespace, we need to make sure 
 
 ## Step 2 - Deploy the microservices application called BookInfo
 
-From the Rancher server, navigate to the cluster "rke2-cluster"
+From the Rancher server, navigate to the cluster `rke2-cluster`
 
-At the cluster dashboard view, go to the option "Import Yaml" at the top right hand corner.
+At the cluster dashboard view, go to the option `Import Yaml` at the top right hand corner.
 
 ![import-yaml-app-bookinfo](../images/import-yaml-app-bookinfo.png)
 
 Open a browser tab, navigate to this URL: https://github.com/istio/istio/blob/master/samples/bookinfo/platform/kube/bookinfo.yaml
 
 Copy the content into Rancher import yaml dialog window.
-Ensure that "default" is being selected as the "Default Namespace". Click on "Import" to start the deployment.
+Ensure that `default` is being selected as the `Default Namespace`. Click on `Import` to start the deployment.
 
 ![app-bookinfo-yaml](../images/app-bookinfo-yaml.png)
 
@@ -55,15 +55,15 @@ However, for this workshop, we would be using Istio, which will make use of it's
 
 In order for the application to take advantage of Istio, we will need to create an Istio Gateway Service for the BookInfo Application. 
 
-From the Rancher server, navigate to the cluster "rke2-cluster"
-At the cluster dashboard view, go to the option "Import Yaml" at the top right hand corner. 
+From the Rancher server, navigate to the cluster `rke2-cluster`
+At the cluster dashboard view, go to the option `Import Yaml` at the top right hand corner. 
 
 ![import-yaml-app-bookinfo](../images/import-yaml-app-bookinfo.png)
 
 Navigation to this URL: https://github.com/istio/istio/blob/master/samples/bookinfo/networking/bookinfo-gateway.yaml
 
 Copy the content into Rancher import yaml dialog window.
-Ensure that "default" is being selected as the "Default Namespace". Click on "Import" to start the deployment.
+Ensure that `default` is being selected as the `Default Namespace`. Click on `Import` to start the deployment.
 
 ![gateway-yaml-bookinfo-app](../images/gateway-yaml-bookinfo-app.png)
 
@@ -111,14 +111,15 @@ Congratulation! you have successfully deployed the BookInfo App.
 
 We will be setting up destination rules which will allow traffic to happen between the various pod used by Bookinfo app. 
 
-From the Rancher server, navigate to the cluster "rke2-cluster"
-At the cluster dashboard view, go to the option "Import Yaml" at the top right hand corner. 
+From the Rancher server, navigate to the cluster `rke2-cluster`
+At the cluster dashboard view, go to the option `Import Yaml` at the top right hand corner. 
 
 ![import-yaml](../images/import-yaml.png)
 
 Navigate to this url: https://github.com/istio/istio/blob/master/samples/bookinfo/networking/destination-rule-all.yaml
 
-copy the content into Rancher import yaml dialog window and hit `Import`
+Copy the content into Rancher import yaml dialog window.
+Ensure that `default` is being selected as the `Default Namespace`. Click on `Import` to start the deployment.
 
 ![destinationrule](../images/destinationrule.png)
 
@@ -130,7 +131,7 @@ Destination Rule created, you can hit `close`
 
 We have successfully deployed the destination rule.
 
-Next step is to generate traffic to the bookinfo app. For this we will deploy a pod which will communicate every 1 second to the bookinfo app.
+Next step is to generate traffic to the bookinfo app. In order to acheive this we will be deploying a pod which will be polling the BookInfo app every second.
 
 ## Step 5 - deploy traffic generation app
 
