@@ -166,6 +166,7 @@ At the cluster dashboard view, go to the option `Import Yaml` at the top right h
 Copy the contents of the sample yaml definition below into Rancher import yaml dialog window.
 **IMPORTANT: You must ensure that the value of URL is modified according to the one that you have taken down in STEP 3.
 This URL must be within the quotes symbol `" "`**
+
 Ensure that `loadtest` is being selected as the `Default Namespace`. Click on `Import` to start the deployment.
 
 `Sample yaml definition` 
@@ -188,17 +189,9 @@ spec:
     name: curl
 ```
 
-**Important fields** in the yaml definition 
-
-1 - **Namespace** `loadtest`
-
-2 - **URL** `http://40.80.87.0:31380/productpage`. URL should be within the quotes symbol `" "`
-
 ![loadtest-yaml-modified-to-unique-rke-url](../images/loadtest-yaml-modified-to-unique-rke-url-16508833232382.png)
 
-Let's check if the pod is up & running
-
-`Cluster` > `Workload` > `Pod` > Under Namespace select `loadtest` 
+Let's check if the pod is up & running by going to `Workload` > `Pods`. You might need to select the namespace `loadtest`.
 
 ![loadtest-pod-success](../images/loadtest-pod-success.png)
 
