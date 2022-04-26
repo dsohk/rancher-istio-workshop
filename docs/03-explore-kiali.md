@@ -74,6 +74,32 @@ New value
 
 ![istio-traffic-refresh-changes](../images/istio-traffic-refresh-changes.png)
 
+
+
+Application Page 
+
+![Istio-Application](../images/Istio-Application.png)
+
+If you click on `productpage` under `Name` column you will see the traffic flow. 
+
+![Application-productpage](../images/Application-productpage.png)
+
+
+
+Under `Workload` if you click on `ratings-v1`,
+
+![workload-rating1](../images/workload-rating1.png)
+
+
+
+
+
+Similarly Under `Service` Tab if you click on `productpage` under `Name` column you will see the Service flow. ![istio-service-bookinfo-flow](../images/istio-service-bookinfo-flow.png)
+
+Finally, under `Istio Config` tab you will see all Istio component that you can view & configure. 
+
+![Istio-config](../images/Istio-config.png)
+
 To summarize, we have viewed how our application traffic is going from Istio Ingress gateway to various microservices.
 
 
