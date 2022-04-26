@@ -64,7 +64,7 @@ Once Monitoring is installed, you will see the `Monitoring` as available left ha
 
 
 
-## Lab 3 - Setup Istio with Rancher
+## Step 3 - Setup Istio with Rancher
 
 After Monitoring add-on is installed, navigate to the `Cluster Tools` page, this time choose `Istio` and click on `Install` button.
 
@@ -78,7 +78,7 @@ On the `components` tab, check the box next to `Enabled CNI` and ` Enable Jaeger
 
 ![01-rke2cluster1-istio-component-selections](../images/01-rke2cluster1-istio-component-selections.png)
 
-On the `Custom Overlay File` ta, add a custom overlay file like below to specify the path for `cniBinDir` and `cniConfDir`.
+On the `Custom Overlay File` tab, add a custom overlay file like below to specify the path for `cniBinDir` and `cniConfDir`.
 
 See Notes: https://rancher.com/docs/rancher/v2.6/en/istio/configuration-reference/rke2/
 

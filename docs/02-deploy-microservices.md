@@ -167,7 +167,7 @@ spec:
   - command: ['sh', '-c', 'while true; do sleep $INTERVAL; curl -sk $URL; done']
     env:
     - name: URL
-      value: "http://20.219.17.7.sslip.io:31380/productpage"
+      value: "http://20.219.17.7:31380/productpage"
     - name: INTERVAL
       value: "1"
     image: radial/busyboxplus:curl
