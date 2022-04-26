@@ -40,7 +40,7 @@ For example, on the screenshot below, we can see the traffic between productpage
 
 ![traffice-between-service-product-page-to-app-product-app](../images/traffice-between-service-product-page-to-app-product-app.png)
 
-Next we can also see the traffic `productpage` to `reviews`. We can tell that the communication between the microservice is secured as it's encrpted.
+Next we can also see the traffic `productpage` to `reviews`. We can tell that the communication between the microservice is secured as it has been encrpyted.
 
 ![istioingress-2-productpage-reviews](../images/istioingress-2-productpage-reviews.png)
 
