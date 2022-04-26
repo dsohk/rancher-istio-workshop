@@ -31,7 +31,7 @@ You will then be led to Rancher Server login page. Enter the admin credentials t
 
 In Rancher Home page, click the `3-line` icon next to Rancher logo on the top left corner. 
 
-Click on `Explore Cluster` > `Cluster Management`
+Click on `Global Apps` > `Cluster Management`
 
 ![01-rancher-cluster-management-rke2cluster1](../images/01-rancher-cluster-management-rke2cluster1.png)
 
@@ -71,7 +71,7 @@ Resource Limits
 
 * `Requested Memory = 500Mi`
 
-Rest all default
+You can leave the rest as default. Click on the "Install" button to continue.
 
 ![01-rk2cluster1-monitoring-adjusting-promethus-value](../images/01-rk2cluster1-monitoring-adjusting-promethus-value.png)
 
@@ -79,7 +79,7 @@ Once Prometheus is successfully installed, you should success message as below.
 
 ![01-rkecluster1-monitoring-installation-complete](../images/01-rkecluster1-monitoring-installation-complete.png)
 
-Once Monitoring is installed, you will see the `Monitoring` as available left hand side menu pane. You can click on `Grafana` which will open browser window `Grafana Dashboard`
+Once Monitoring is installed, you will click on the newly available `Monitoring` option on the left hand side menu pane. You can then click on `Grafana` which will open browser window `Grafana Dashboard`
 
 ![01-rke2cluster1-monitoring-homepage](../images/01-rke2cluster1-monitoring-homepage.png)
 
