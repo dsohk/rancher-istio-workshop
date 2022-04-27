@@ -23,7 +23,7 @@ This repository contains provide the lab exercise guide for a hands-on workshop 
 * [Deploy Sample BookInfo Microservices](docs/02-deploy-microservices.md)
 * [Visualize Service Mesh with Kiali](docs/03-explore-kiali.md)
 * [Explore Distributed Tracing with Jaeger](docs/04-explore-jaeger.md)
-* [Secure Microservices with Neuvector](docs/05-explore-neuvector.md)
+* [A glimpse of NeuVector in how it secures Microservices](docs/05-explore-neuvector.md)
 
 
 
