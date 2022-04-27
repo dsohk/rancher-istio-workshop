@@ -22,6 +22,10 @@ Upon success you move your mouse on `Labels` you will see the injection successf
 
 ## Step 2 - Deploy the microservices application called BookInfo
 
+![Bookinfo Application](https://istio.io/latest/docs/examples/bookinfo/withistio.svg)
+
+
+
 From the Rancher server, navigate to the cluster `rke2-cluster`
 
 At the cluster dashboard view, go to the option `Import Yaml` at the top right hand corner.

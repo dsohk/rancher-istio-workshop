@@ -9,7 +9,7 @@ This repository contains provide the lab exercise guide for a hands-on workshop 
 | Software           | Version  | Remarks                                                      |
 | ------------------ | -------- | ------------------------------------------------------------ |
 | Rancher            | 2.6.4    | Enterprise-grade Kubernetes Management Platform              |
-| RKE2               | 1.21.4   | Rancher Kubernetes Engine 2 - with Kubernetes version 1.22   |
+| RKE2               | 1.21.4   | Rancher Kubernetes Engine 2 - with Kubernetes version 1.21   |
 | Prometheus/Grafana | 19.0.3   | Monitoring tools for Kubernetes                              |
 | Istio              | 1.11.7   | Service Mesh with Istio distributed as part of Rancher       |
 | Neuvector          | 5.0.0-b1 | The industry's first open source full-lifecycle cloud native security platform for Kubernetes |
@@ -22,8 +22,16 @@ This repository contains provide the lab exercise guide for a hands-on workshop 
 * [Deploy Monitoring and Istio onto RKE2 cluster](docs/01-setup-istio.md)
 * [Deploy Sample BookInfo Microservices](docs/02-deploy-microservices.md)
 * [Visualize Service Mesh with Kiali](docs/03-explore-kiali.md)
-* [Explore Distributed Tracing with Jaeger](docs/04-explore-jeager.md)
+* [Explore Distributed Tracing with Jaeger](docs/04-explore-jaeger.md)
 * [Secure Microservices with Neuvector](docs/05-explore-neuvector.md)
+
+
+
+## References
+
+* [Rancher Documentation]()
+* [https://istio.io/latest/docs/](https://istio.io/latest/docs/)
+* [https://open-docs.neuvector.com/](https://open-docs.neuvector.com/)
 
 
 
