@@ -1,4 +1,4 @@
-# Managing and Securing microservices with Rancher and Neuvector
+# Managing and Securing microservices with Rancher, Istio, and Neuvector
 
 This repository contains provide the lab exercise guide for a hands-on workshop to help audience to understand and explore the open source technologies in managing and securing microservices-based applications running on Kubernetes.
 
@@ -30,8 +30,8 @@ This repository contains provide the lab exercise guide for a hands-on workshop 
 ## References
 
 * [Rancher Documentation]()
-* [https://istio.io/latest/docs/](https://istio.io/latest/docs/)
-* [https://open-docs.neuvector.com/](https://open-docs.neuvector.com/)
+* [Istio Documentation](https://istio.io/latest/docs/)
+* [NeuVector Documentation](https://open-docs.neuvector.com/)
 
 
 
