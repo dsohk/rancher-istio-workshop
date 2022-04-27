@@ -53,6 +53,36 @@ For Services, you can go to `Service Discovery` > `Services`. You can also selec
 
 
 
+Let expose the deployment via Ingrees Service so it's accessible to outside world.
+
+`Cluster` > `Service Discovery` > `Ingress`  > `Create`
+
+`name` = `bookinfo`
+
+`Rule` >  under `Request Host URL`  provide the url as specified below
+
+`bookinfo.<IP-of-NeuVector>.sslip.io`
+
+Note **Please use your own unique IP of NeuVector Server**
+
+![april27-Ingress-bookinfo](../images/april27-Ingress-bookinfo.png)
+
+
+
+![april27-ingress-controller-bookinfo-app](../images/april27-ingress-controller-bookinfo-app.png)
+
+If you click on the URL under `Target` Column you should be taken to sample bookinfo product page which should display page similar as below. 
+
+![april27-book-info-app-opening-success](../images/april27-book-info-app-opening-success.png)
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 ## Step 3 - Deploy Istio gateway for BookInfo application
 
 In the previous step, we were looking at the Services that has been deployed when we installed the Bookinfo application. These Services would typically make use of the Ingress Controller in order to be exposed externally outside of the cluster. 
