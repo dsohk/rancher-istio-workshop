@@ -8,12 +8,17 @@ With Istio (Service Mesh) and Prometheus/Grafana (Monitoring) components deploye
 
 Before we deploy microservices app into default namespace, we need to make sure Istio can automatically inject an envoy proxy sidecar sitting next to teach cicroservices. To achieve this, we need to enable auto-injection.
 
-1. Navigate to `Istio` on the left pane menu.
+Click `Istio` on the left pane menu and Click `Kiali`
 
-2. Choose `Kiali` application
-3. You will be presented a home page 
+Choose Default namespace, click `3 dots vertical line` and click on `Enable Auto Injection`
 
-**Missing AUTO INJECTION PROCEDURES!!!**
+![01-rke2cluster1-istio-kiali-enable-auto-injection](../images/01-rke2cluster1-istio-kiali-enable-auto-injection.png)
+
+Upon success you move your mouse on `Labels` you will see the injection successfully done 
+
+![rke2cluster1-istio-kiali-enable-auto-injection-success](../images/rke2cluster1-istio-kiali-enable-auto-injection-success.png)
+
+
 
 ## Step 2 - Deploy the microservices application called BookInfo
 
@@ -72,40 +77,7 @@ From the menu on the left, select `Istio` >  `Gateways`
 
 
 
-
-
-
-## Step 4 - Find the BookInfo Gateway URL
-
-We now have our Gateway Services for Istio set-up. We now need to utilze it. 
-
-Let's find out the URL for our Gateway Services. 
-
-From the menu on the left, select `Services Discovery` > `Services`. Select the namespace `Istio-system`
-
-![services-istio-istio-ingressgateway](../images/services-istio-istio-ingressgateway.png)
-
-Click on the Name `istio-ingressgateway` and select the tab `Ports`. Take note of the `NodePort` corresponding to `http2` and jot it down. Typically, `http2` would be mapped to the `NodePort` value `31380`. This value will be used in the next step.
-
-![services-istio-ingress-gateway-nodeport](../images/services-istio-ingress-gateway-nodeport.png)
-
-Next, you will need to have the Public IP of your RKE2 downstream cluster.  
-
-This IP has already been shared with you. Look out for the IP corresponding to `neuvector_webui_url` . Append the `Nodeport` & `productpage` accordingly. The final URL should look like below. 
-
-`http://40.80.87.0:31380/productpage`
-
-**IMPORTANT: You must take down your unique URL. It will be required in STEP 6**
-
-You should be able to access the BookInfo web front from youe unique URL.
-
-![bookinfo-app-exposed-via-istio](../images/bookinfo-app-exposed-via-istio.png)
-
-Congratulation! you have successfully deployed the BookInfo App. 
-
-
-
-## Step 5 - Deploy destination rules
+## Step 4 - Deploy destination rules
 
 We will be setting up destination rules which will allow traffic to happen between the various pod used by Bookinfo app. 
 
@@ -129,6 +101,43 @@ Destination Rule created, you can hit `close`
 We have successfully deployed the destination rule.
 
 Next step is to generate traffic to the bookinfo app. In order to acheive this we will be deploying a pod which will be polling the BookInfo app every second.
+
+
+
+
+## Step 5 - Find the BookInfo Gateway URL
+
+We now have our Gateway Services for Istio set-up. We now need to utilze it. 
+
+Let's find out the URL for our Gateway Services. 
+
+From the menu on the left, select `Services Discovery` > `Services`. Select the namespace `Istio-system`
+
+![services-istio-istio-ingressgateway](../images/services-istio-istio-ingressgateway.png)
+
+Click on the Name `istio-ingressgateway` and select the tab `Ports`. Take note of the `NodePort` corresponding to `http2` and jot it down. Typically, `http2` would be mapped to the `NodePort` value `31380`. This value will be used in the next step.
+
+![services-istio-ingress-gateway-nodeport](../images/services-istio-ingress-gateway-nodeport.png)
+
+Next, you will need to have the Public IP of your RKE2 downstream cluster.  
+
+This IP has already been shared with you. Look out for the IP corresponding to `neuvector_webui_url` . Append the `Nodeport` & `productpage` accordingly. The final URL should look like below. 
+
+`http://40.80.87.0:31380/productpage`
+
+**IMPORTANT: You must take down your unique URL. It will be required in STEP 6**
+
+You should be able to access the BookInfo web front from youe unique URL. In case you are working behind a proxy server or corprate firewall that blocks you from accessing any URL with ports other than 80 or 443, then you need to setup an nginx ingress proxy for the application.
+
+** Add nginx ingress for Bookinfo product page **
+
+![bookinfo-app-exposed-via-istio](../images/bookinfo-app-exposed-via-istio.png)
+
+Congratulation! you have successfully deployed the BookInfo App. 
+
+
+
+
 
 ## Step 6 - deploy traffic generation app
 
@@ -162,7 +171,7 @@ From the Rancher server, ensure that you are at `rke2-cluster` and then go to th
 
 Copy the contents of the sample yaml definition below into Rancher import yaml dialog window.
 
-**IMPORTANT: You must ensure that the value of URL is modified according to the one that you have taken down in STEP 4.
+**IMPORTANT: You must ensure that the value of URL is modified according to the one that you have taken down in STEP 5.
 This URL must be within the quotes symbol `" "`**
 
 Ensure that `loadtest` is being selected as the `Default Namespace`. Click on `Import` to start the deployment.
