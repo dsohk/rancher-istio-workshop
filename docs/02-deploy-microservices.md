@@ -152,7 +152,7 @@ Congratulation! you have successfully deployed the BookInfo App.
 
 --------
 
-## Step 5 - Expose BookInfo Application to Users 
+## Step 6 - Expose BookInfo Application to Users 
 
 To expose the BookInfo Application, we will need to create create a Ingress Services so that using the Ingress Service, Application would be exposed.
 
@@ -190,13 +190,9 @@ Add `/productpage` at the end of the URL & the page#bookinfo-app-exposed-via-ist
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## 
 
 
-
-
-
-## Step 6 - deploy traffic generation app
+## Step 7 - deploy traffic generation app
 
 For simplicity sake, we will deploy a simple pod which will curl into BookInfo app. The pod will be created in it's own namespace, so let first create a project and a namespace. 
 
