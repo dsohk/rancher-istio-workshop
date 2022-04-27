@@ -59,9 +59,17 @@ Let expose the deployment via Ingrees Service so it's accessible to outside worl
 
 `name` = `bookinfo`
 
+`namespace` = `istio-system`
+
 `Rule` >  under `Request Host URL`  provide the url as specified below
 
 `bookinfo.<IP-of-NeuVector>.sslip.io`
+
+`path` = `ImplementationSpecific`
+
+`Target Service` = `Istio-ingressgateway` 
+
+`Port` = `80`
 
 Note **Please use your own unique IP of NeuVector Server**
 
@@ -71,17 +79,13 @@ Note **Please use your own unique IP of NeuVector Server**
 
 ![april27-ingress-controller-bookinfo-app](../images/april27-ingress-controller-bookinfo-app.png)
 
-If you click on the URL under `Target` Column you should be taken to sample bookinfo product page which should display page similar as below. 
+If you click on the URL under `Target` Column you should get the page error. Add `/productpage` at the end of the URL & the page should open up as below.
 
 ![april27-book-info-app-opening-success](../images/april27-book-info-app-opening-success.png)
 
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
 
 ## Step 3 - Deploy Istio gateway for BookInfo application
 
