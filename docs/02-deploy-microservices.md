@@ -57,40 +57,6 @@ For Services, you can go to `Service Discovery` > `Services`. You can also selec
 
 
 
-Let expose the deployment via Ingrees Service so it's accessible to outside world.
-
-`Cluster` > `Service Discovery` > `Ingress`  > `Create`
-
-`name` = `bookinfo`
-
-`namespace` = `istio-system`
-
-`Rule` >  under `Request Host URL`  provide the url as specified below
-
-`bookinfo.<IP-of-NeuVector>.sslip.io`
-
-`path` = `ImplementationSpecific`
-
-`Target Service` = `Istio-ingressgateway` 
-
-`Port` = `80`
-
-Note **Please use your own unique IP of NeuVector Server**
-
-![april27-Ingress-bookinfo](../images/april27-Ingress-bookinfo.png)
-
-
-
-![april27-ingress-controller-bookinfo-app](../images/april27-ingress-controller-bookinfo-app.png)
-
-If you click on the URL under `Target` Column you should get the page error. Add `/productpage` at the end of the URL & the page should open up as below.
-
-![april27-book-info-app-opening-success](../images/april27-book-info-app-opening-success.png)
-
-
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 ## Step 3 - Deploy Istio gateway for BookInfo application
 
 In the previous step, we were looking at the Services that has been deployed when we installed the Bookinfo application. These Services would typically make use of the Ingress Controller in order to be exposed externally outside of the cluster. 
@@ -142,6 +108,9 @@ Next step is to generate traffic to the bookinfo app. In order to acheive this w
 
 
 
+**Skip Step 5** 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Step 5 - Find the BookInfo Gateway URL
 
@@ -165,6 +134,12 @@ This IP has already been shared with you. Look out for the IP corresponding to `
 
 **IMPORTANT: You must take down your unique URL. It will be required in STEP 6**
 
+
+
+
+
+
+
 You should be able to access the BookInfo web front from youe unique URL. In case you are working behind a proxy server or corprate firewall that blocks you from accessing any URL with ports other than 80 or 443, then you need to setup an nginx ingress proxy for the application.
 
 ** Add nginx ingress for Bookinfo product page **
@@ -172,6 +147,50 @@ You should be able to access the BookInfo web front from youe unique URL. In cas
 ![bookinfo-app-exposed-via-istio](../images/bookinfo-app-exposed-via-istio.png)
 
 Congratulation! you have successfully deployed the BookInfo App. 
+
+
+
+--------
+
+## Step 5 - Expose BookInfo Application to Users 
+
+To expose the BookInfo Application, we will need to create create a Ingress Services so that using the Ingress Service, Application would be exposed.
+
+`Cluster` > `Service Discovery` > `Ingress`  > `Create`
+
+Fill the below detail in the `Ingress` Page
+
+`namespace` = `istio-system`
+
+`name` = `bookinfo`
+
+Under `Rules` Page 
+
+ `Request Host`  `=`  `bookinfo.<IP-of-NeuVector>.sslip.io`
+
+`Path` = `ImplementationSpecific`
+
+`Target Service` = `Istio-ingressgateway`  
+
+`Port` = `80`
+
+Note **Please use your own unique IP of NeuVector Server**
+
+![april27-Ingress-bookinfo](../images/april27-Ingress-bookinfo.png)
+
+Click on the URL under `Target` Column for  Application bookinfo. The page should error out (404 Page not found)`. 
+
+Add `/productpage` at the end of the URL & the page#bookinfo-app-exposed-via-istio should open up as below.
+
+![april27-ingress-controller-bookinfo-app](../images/april27-ingress-controller-bookinfo-app.png)
+
+![april27-book-info-app-opening-success](../images/april27-book-info-app-opening-success.png)
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## 
 
 
 
