@@ -20,7 +20,7 @@ Select appropriate namespace, `bookinfo` & hit `Import`
 
 
 
-Notice that the reviews part of the page displays with no rating stars, no matter how many times you refresh. This is because you configured Istio to route all traffic for the reviews service to the version `reviews:v1` and this version of the service does not access the star ratings service.
+**Refresh the /productpage in your browser,  notice that the reviews part of the page displays with no rating stars, no matter how many times you refresh. This is because you configured Istio to route all traffic for the reviews service to the version `reviews:v1` and this version of the service does not access the star ratings service.**
 
 ## Task 2 - Let's transfer 50% of the traffic from `reviews:v1` to `reviews:v3`
 
@@ -34,7 +34,7 @@ Select appropriate namespace, `bookinfo` & hit `Import`
 
 
 
-Refresh the /productpage in your browser and you now see red colored star ratings approximately 50% of the time. This is because the v3 version of reviews accesses the star ratings service, but the v1 version does not.
+**Refresh the /productpage in your browser and you now see red colored star ratings approximately 50% of the time. This is because the v3 version of reviews accesses the star ratings service, but the v1 version does not**
 
 ## Task3 - Let's transfer 100% of the traffic from `reviews:v3`
 
@@ -48,4 +48,4 @@ Select appropriate namespace, `bookinfo` & hit `Import
 
 ![all-traffic-v3](../images/all-traffic-v3.png)
 
-Now when you refresh the `/productpage` you will always see book reviews with *red* colored star ratings for each review.
+**Now when you refresh the `/productpage` you will always see book reviews with *red* colored star ratings for each review**
