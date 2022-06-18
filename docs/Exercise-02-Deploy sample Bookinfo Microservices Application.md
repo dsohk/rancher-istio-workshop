@@ -24,9 +24,7 @@ Alternatively, you can also enable Auto Injection via Rancher UI - Cluster Dashb
 
 Cluster Dashboard >  Cluster > Project/Namespace  > 3 Vertical Dots against the selected Namespace & click on “+ Enable Istio Auto Injection"
 
- ![Enable Istio Auto Injection](../../../April27-2022-ServiceMesh-Istio/rancher-istio-workshop/images/Enable Istio Auto Injection.png)
-
-
+![Enable Istio Auto Injection](../images/Enable Istio Auto Injection.png)
 
 
 
@@ -40,13 +38,13 @@ Cluster Dashboard >  Cluster > Project/Namespace  > 3 Vertical Dots against the 
 
 Select Namespace **bookinfo**, provide a name to your application and click `Next`  
 
-![bookinfo-app-provision-pg1](../../../April27-2022-ServiceMesh-Istio/rancher-istio-workshop/images/bookinfo-app-provision-pg1.png)
+![bookinfo-app-provision-pg1](../images/bookinfo-app-provision-pg1-16555697242575.png)
 
 Continue with default and hit `Install` 
 
 Upon successfull deployment of the application, we should see **success**
 
-![bookinfo-app-success](../../../April27-2022-ServiceMesh-Istio/rancher-istio-workshop/images/bookinfo-app-success.png)
+![bookinfo-app-success](../images/bookinfo-app-success-16555697373516.png)
 
 You can verify your deployment by checking 
 
