@@ -30,7 +30,7 @@ Cluster > Istio > Virtual Services > Import YAML > Read from File/Copy the yaml 
 
 Select appropriate namespace, `bookinfo` & hit `Import`
 
-![50%-traffic-to-v1-&-50%-to-v3](../images/50%-traffic-to-v1-&-50%-to-v3.png)
+![50-traffic-to-v1-&-50-to-v3](../images/50-traffic-to-v1-&-50-to-v3.png)
 
 
 
