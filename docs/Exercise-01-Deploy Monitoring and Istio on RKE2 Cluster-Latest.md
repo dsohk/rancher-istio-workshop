@@ -193,9 +193,9 @@ On successfully install of Istio, you should see below success message.
 
 Once Istio is provisioned, you can check the pods in the **Istio-system** namespace. 
 
-![istio-pods-in-Istio-system-namespace](../../../April27-2022-ServiceMesh-Istio/rancher-istio-workshop/images/istio-pods-in-Istio-system-namespace-16555584476451.png)
+![istio-controlplane-pods](../../../April27-2022-ServiceMesh-Istio/rancher-istio-workshop/images/istio-controlplane-pods.png)
 
-![istio-services](../../../April27-2022-ServiceMesh-Istio/rancher-istio-workshop/images/istio-services-16555585274702.png)
+![istio-service](../../../April27-2022-ServiceMesh-Istio/rancher-istio-workshop/images/istio-service.png)
 
 
 
