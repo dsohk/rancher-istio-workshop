@@ -46,13 +46,21 @@ Upon successfull deployment of the application, we should see **success**
 
 ![bookinfo-app-success](../images/bookinfo-app-success-16555697373516.png)
 
-You can verify your deployment by checking 
+You can verify your deployment, pods & services  under namespace `bookinfo` 
 
-Cluster > Workload Deployment
+Cluster > Workload > Deployment 
 
-Cluster > Workload Pods
+Cluster > Workload > Pods
 
 Cluster > Service Discovery > Services
+
+Under Istio, you can view the Destination Rule, Gateway & Virtual Services created 
+
+Cluster > Istio > Destination Rules
+
+Cluster > Istio > Gateway
+
+Cluster > Istio > Virtual Services
 
 ## Step 3 - Expose BookInfo Application to Users 
 

@@ -61,7 +61,7 @@ Click on `Create Namespace`, name the namespace `bookinfo` and then click on `cr
 
 
 
-Similarly let create another namespace to infuse traffic in our application. In this namespace we will deploy a simple pod which will curl into our application
+Similarly repeat the previous step for creating yet another namespace which will run a pod to infuse traffic in our application. 
 
 `Cluster` > `Project/Namespaces` > `Create Project`
 
@@ -91,8 +91,6 @@ Before installing Istio, you need to enable Monitoring (Prometheus and Grafana) 
 
 Click on `Cluster Tools` at the bottom of the left hand side menu pane. 
 
-![01-rke2cluster1-cluster-dashboard](../images/01-rke2cluster1-cluster-dashboard.png)
-
 Click `Install`  button of the `Monitoring` application.
 
 ![01-rke2cluster1-dashboard-cluster-tools](../images/01-rke2cluster1-dashboard-cluster-tools.png)
@@ -120,8 +118,6 @@ Once Prometheus is successfully installed, you should success message as below.
 Once Monitoring is installed, you will click on the newly available `Monitoring` option on the left hand side menu pane. You can then click on `Grafana` which will open browser window `Grafana Dashboard`
 
 ![01-rke2cluster1-monitoring-homepage](../images/01-rke2cluster1-monitoring-homepage.png)
-
-
 
 ## Step 3 - Setup Istio with Rancher
 
@@ -173,11 +169,7 @@ Your Custom Overlay file should look as below
 
 ![01-rke2cluster1-istio-customer-overlay-file](../images/01-rke2cluster1-istio-customer-overlay-file.png)
 
-![01-Istio-Kiali-enable-auto-injection-final](../images/01-Istio-Kiali-enable-auto-injection-final.png)
-
 Click `Install` button to start deploying Istio on RKE2 cluster.
-
-![01-rke2-cluster1-istio-install-initated](../images/01-rke2-cluster1-istio-install-initated.png)
 
 On successfully install of Istio, you should see below success message.
 

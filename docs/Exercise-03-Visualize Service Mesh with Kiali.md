@@ -1,112 +1,51 @@
-# Lab 3 - Visualize Your Service Mesh
+# Lab 03 - Traffic Shaping with Service Mesh
 
-Once you have deployed the microservices app into `default` namespace and the traffic generator has been running to constantly visiting the application endpoint, we can make use of Kiali to visualize your service mesh. 
+This exercise, we will configure shift traffic from one version of a microservice to another.
 
-To access Kiali, 
+A common use case is to migrate traffic gradually from an older version of a microservice to a new one. 
 
-`Cluster` > `Istio` > `Kaili`
+In Istio, you can configure routing rules so that we re-direct a % of traffic to one destination to another. 
 
-![01-rke2cluster-istio-kiali-and-jaeger](../images/01-rke2cluster-istio-kiali-and-jaeger.png)
+## Task 1 - We will route all traffic to v1 of each micro services
 
-We have only configured Istio on namespace `default`, hence this will be the only namespace that you will see a green tick besides `Istio Config`
+In this task, you will use send 100% of traffic to `reviews:v1` 
 
-![kiali-ui-Istio-configured-for-default-ns](../images/kiali-ui-Istio-configured-for-default-ns.png)
+Cluster > Istio > Virtual Services > Import YAML > Read from File/Copy the yaml content
 
-Click on 3 Vertial dots in the namespace `default` and then select `graph`
+`route-all-traffic-to-v1.yaml`
 
-![Istio-Graph](../images/Istio-Graph.png)
+Select appropriate namespace, `bookinfo` & hit `Import`
 
+![import-yaml-all-traffic-to-v1](../images/import-yaml-all-traffic-to-v1.png)
 
 
-![Istio-traffic-visual-namespace-default](../images/Istio-traffic-visual-namespace-default.png)
 
+Notice that the reviews part of the page displays with no rating stars, no matter how many times you refresh. This is because you configured Istio to route all traffic for the reviews service to the version `reviews:v1` and this version of the service does not access the star ratings service.
 
+## Task 2 - Let's transfer 50% of the traffic from `reviews:v1` to `reviews:v3`
 
-Click on `Display` and you can tick the check boxes to play around the graphics.
+Cluster > Istio > Virtual Services > Import YAML > Read from File/Copy the yaml content
 
-![Istio-Traffic-Display-Show-Edge-Labels](../images/Istio-Traffic-Display-Show-Edge-Labels.png)
+`transfer-50%-traffic-to-reviews-v1-&-50%-to-reviews-v3.yaml`
 
-You can also check out `Istio Legends`
+Select appropriate namespace, `bookinfo` & hit `Import`
 
-![Istio-Legends](../images/Istio-Legends-16508866338812.png)
+![50%-traffic-to-v1-&-50%-to-v3](../images/50%-traffic-to-v1-&-50%-to-v3.png)
 
-By taking note of the `legends`, it is easier to see how your traffic is flowing between various components.
 
- ![http-communciation-between-istiogateway-product-app](../images/http-communciation-between-istiogateway-product-app.png)
 
+Refresh the /productpage in your browser and you now see red colored star ratings approximately 50% of the time. This is because the v3 version of reviews accesses the star ratings service, but the v1 version does not.
 
+## Task3 - Let's transfer 100% of the traffic from `reviews:v3`
 
-For example, on the screenshot below, we can see the traffic between productpage Service & productpage Application. We can also tell this is a `http` traffic with 2.04 kps speed between the
+Assuming you decide that the `reviews:v3` microservice is stable, you can route 100% of the traffic to `reviews:v3` by applying this virtual service:
 
-![traffice-between-service-product-page-to-app-product-app](../images/traffice-between-service-product-page-to-app-product-app.png)
+Cluster > Istio > Virtual Services > Import YAML > Read from File/Copy the yaml content
 
-Next we can also see the traffic `productpage` to `reviews`. We can tell that the communication between the microservice is secured as it has been encrpyted.
+`reviews-only-v3`
 
-![istioingress-2-productpage-reviews](../images/istioingress-2-productpage-reviews.png)
+Select appropriate namespace, `bookinfo` & hit `Import
 
+![all-traffic-v3](../images/all-traffic-v3.png)
 
-
-The screenshot below shows the communication between `reviews` to `rating`.
-
-![review-2-rating](../images/review-2-rating.png)
-
-
-
-You can also toggle between 3 topologies to change the layout visualization.
-
-`Default Layout`
-
-![Istio-default-layout](../images/Istio-default-layout.png)
-
-Layout -1 - cose-bilkent
-
-![Istio-layout-1-cose-bilkent](../images/Istio-layout-1-cose-bilkent.png)
-
-Layout 2 - Cola 
-
-![Istio-layout2-cola](../images/Istio-layout2-cola.png)
-
-You can change the traffic metric refresh rate by adjusting the value of your choice.
-
-![Istio-traffice-refresh-rate-options](../images/Istio-traffice-refresh-rate-options.png)
-
-A new value has been applied
-
-![istio-traffic-refresh-changes](../images/istio-traffic-refresh-changes.png)
-
-
-
-You can also play around with the different options on the left menu. Select `Application Page`
-
-![Istio-Application](../images/Istio-Application.png)
-
-If you click on `productpage` under `Name` column you will see the traffic flow. 
-
-![Application-productpage](../images/Application-productpage.png)
-
-
-
-From the left menu, select `Workload` and then under `Name` column, click on `ratings-v1`,
-
-![workload-rating1](../images/workload-rating1.png)
-
-
-
-
-
-Similarly, from the left menu, select `Service`, and then clicj on `productpage` under `Name` column, you will see the Service flow. 
-
-![istio-service-bookinfo-flow](../images/istio-service-bookinfo-flow.png)
-
-Finally, from the left menu, select `Istio Config` and you will see all Istio component that you can view & configure. 
-
-![Istio-config](../images/Istio-config.png)
-
-To summarize, we have viewed how our application traffic is going from Istio Ingress gateway to various microservices.
-
-
-
-
-
-
-
+Now when you refresh the `/productpage` you will always see book reviews with *red* colored star ratings for each review.
