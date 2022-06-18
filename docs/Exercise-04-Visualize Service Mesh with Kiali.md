@@ -70,7 +70,7 @@ From the left menu, select `Workload` and then under `Name` column, click on `ra
 
 
 
-Similarly, from the left menu, select `Service`, and then clicj on `productpage` under `Name` column, you will see the Service flow. 
+Similarly, from the left menu, select `Service`, and then click on `productpage` under `Name` column, you will see the Service flow. 
 
 ![istio-service-bookinfo-flow](../images/istio-service-bookinfo-flow.png)
 
