@@ -1,6 +1,6 @@
 # Lab 04 - Visualize Service Mesh with Kiali
 
-Once you have deployed the microservices app into `default` namespace and the traffic generator has been running to constantly visiting the application endpoint, we can make use of Kiali to visualize your service mesh. 
+Once you have deployed the microservices app into `bookinfo` namespace and the traffic generator has been running to constantly visiting the application endpoint, we can make use of Kiali to visualize your service mesh. 
 
 To access Kiali, 
 
@@ -8,23 +8,17 @@ To access Kiali,
 
 ![01-rke2cluster-istio-kiali-and-jaeger](../images/01-rke2cluster-istio-kiali-and-jaeger.png)
 
-We have only configured Istio on namespace `default`, hence this will be the only namespace that you will see a green tick besides `Istio Config`
+![Kiali-homepage](../images/Kiali-homepage.png)
 
-![kiali-ui-Istio-configured-for-default-ns](../images/kiali-ui-Istio-configured-for-default-ns.png)
+If you have more namespace where Istio is configured, you may want to use filter & set Kiali to show particular namespace only. 
 
-Click on 3 Vertial dots in the namespace `default` and then select `graph`
+Click on `Graph`  to view the data plane Istio creates for our application. 
 
-![Istio-Graph](../images/Istio-Graph.png)
+![data-plane-app-bookinfo](../images/data-plane-app-bookinfo-16555770380292.png)
 
+Click on the drop down menu for `Display` & adapt the visualization to your requirement. 
 
-
-![Istio-traffic-visual-namespace-default](../images/Istio-traffic-visual-namespace-default.png)
-
-
-
-Click on `Display` and you can tick the check boxes to play around the graphics.
-
-![Istio-Traffic-Display-Show-Edge-Labels](../images/Istio-Traffic-Display-Show-Edge-Labels.png)
+![Selecting-labels-app-bookinfo](../images/Selecting-labels-app-bookinfo.png)
 
 You can also check out `Istio Legends`
 
@@ -32,49 +26,31 @@ You can also check out `Istio Legends`
 
 By taking note of the `legends`, it is easier to see how your traffic is flowing between various components.
 
- ![http-communciation-between-istiogateway-product-app](../images/http-communciation-between-istiogateway-product-app.png)
+You can also toggle between various  topologies to change the layout visualization.
+
+Check out option in `Traffic`
+
+![kiali-traffic-protocol-choice](../images/kiali-traffic-protocol-choice.png)
+
+Check out the option in `graph` 
+
+![kiali-graph-choices](../images/kiali-graph-choices.png)
 
 
 
-For example, on the screenshot below, we can see the traffic between productpage Service & productpage Application. We can also tell this is a `http` traffic with 2.04 kps speed between the
+You can also narrow down to view communication between 2 micro services. 
 
-![traffice-between-service-product-page-to-app-product-app](../images/traffice-between-service-product-page-to-app-product-app.png)
+![kiali-productpage-to-details-focused-view](../images/kiali-productpage-to-details-focused-view.png)
 
-Next we can also see the traffic `productpage` to `reviews`. We can tell that the communication between the microservice is secured as it has been encrpyted.
+Click on `Details`  to look into details for application traffic between Productpage & Details 
 
-![istioingress-2-productpage-reviews](../images/istioingress-2-productpage-reviews.png)
+![kiali-productpage-to-details](../images/kiali-productpage-to-details.png)
 
+Inbound traffic details for `Detail`
 
+![kiali-details-inbound-traffic-details](../images/kiali-details-inbound-traffic-details.png)
 
-The screenshot below shows the communication between `reviews` to `rating`.
-
-![review-2-rating](../images/review-2-rating.png)
-
-
-
-You can also toggle between 3 topologies to change the layout visualization.
-
-`Default Layout`
-
-![Istio-default-layout](../images/Istio-default-layout.png)
-
-Layout -1 - cose-bilkent
-
-![Istio-layout-1-cose-bilkent](../images/Istio-layout-1-cose-bilkent.png)
-
-Layout 2 - Cola 
-
-![Istio-layout2-cola](../images/Istio-layout2-cola.png)
-
-You can change the traffic metric refresh rate by adjusting the value of your choice.
-
-![Istio-traffice-refresh-rate-options](../images/Istio-traffice-refresh-rate-options.png)
-
-A new value has been applied
-
-![istio-traffic-refresh-changes](../images/istio-traffic-refresh-changes.png)
-
-
+![kiali-details-inbound-metrics](../images/kiali-details-inbound-metrics.png)
 
 You can also play around with the different options on the left menu. Select `Application Page`
 
