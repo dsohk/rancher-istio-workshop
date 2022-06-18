@@ -24,7 +24,7 @@ Alternatively, you can also enable Auto Injection via Rancher UI - Cluster Dashb
 
 Cluster Dashboard >  Cluster > Project/Namespace  > 3 Vertical Dots against the selected Namespace & click on “+ Enable Istio Auto Injection"
 
-![Enable Istio Auto Injection](../images/Enable Istio Auto Injection.png)
+![enable-Istio-auto-injection](../images/enable-Istio-auto-injection.png)
 
 
 
