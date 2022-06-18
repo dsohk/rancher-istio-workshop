@@ -22,7 +22,7 @@ Upon success you move your mouse on `Labels` you will see the injection successf
 
 Alternatively, you can also enable Auto Injection via Rancher UI - Cluster Dashboard 
 
-Cluster Dashboard >  Cluster > Project/Namespace  > 3 Vertical Dots against the selected Namespace & click on “+ Enable Istio Auto Injection"
+`Cluster Dashboard` >  `Cluster` > `Project/Namespace`  > `3 Vertical Dots` against the selected Namespace & click on `+ Enable Istio Auto Injection`
 
 ![enable-Istio-auto-injection](../images/enable-Istio-auto-injection.png)
 
