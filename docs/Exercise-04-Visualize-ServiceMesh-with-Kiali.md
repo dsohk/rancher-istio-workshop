@@ -66,10 +66,6 @@ From the left menu, select `Workload` and then under `Name` column, click on `ra
 
 ![workload-rating1](../images/workload-rating1.png)
 
-
-
-
-
 Similarly, from the left menu, select `Service`, and then click on `productpage` under `Name` column, you will see the Service flow. 
 
 ![istio-service-bookinfo-flow](../images/istio-service-bookinfo-flow.png)
@@ -78,9 +74,10 @@ Finally, from the left menu, select `Istio Config` and you will see all Istio co
 
 ![Istio-config](../images/Istio-config.png)
 
-To summarize, we have viewed how our application traffic is going from Istio Ingress gateway to various microservices.
+To summarize, we have viewed how our Istio data plane look like. We can visualize our application traffic is going between each micro-services application that constitute our bookinfo application. 
 
+In the next exercise 05, we will take a look at Jaeger which help us with distributed tracing
 
-
+Click on this link to move to [Exercise-05-Explore Distributed Tracing with Jaeger](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-05-ExploreDistributedTracingwithJaeger.md)
 
 

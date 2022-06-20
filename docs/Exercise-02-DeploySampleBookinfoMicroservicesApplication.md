@@ -141,11 +141,13 @@ Let's check if the pod is up and running by going to `Workload` > `Pods`. You mi
 
 ![loadtest-pod-success](../images/loadtest-pod-success.png)
 
-With this we have successfully completed step 2 of the workshop.  
+With the above step, we have successfully completed exercise 2 of the workshop. Let's summarize what we have accomplished so far.  
 
-To summarize, we have deployed the micro-services, enabled Istio, injected Istio sidecars to our application, configured Istio Gateway & destination rule to access application and it's application traffic. Finally we have deployed a container to access the application. 
+We have enable Istio Injection into a particular namespace where we have than deploy our application. This create the deployment, services, destination rule & gateways services for our micro services application. We than expose our application so that we view it from our local browser. In addition, we have also deployed a container to infuse traffic into our application. 
 
-In the next steps, we will observe the application traffic via Kiali & Jaeger. 
+In the next steps, we will configure traffic shaping, also commonly refereed to as Canary deployment.  
 
 We are ready to move to the [Exercise-03-Traffic Shaping with Service Mesh Canary Deployment](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-03-Traffic-Shaping-with-ServiceMesh.md)
+
+
 

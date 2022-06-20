@@ -178,14 +178,19 @@ On successfully install of Istio, you should see below success message.
 
 Once Istio is provisioned, you can check the pods in the **Istio-system** namespace. 
 
+Cluster > Workload > Pods. filter to select `istio-system`  namespace 
+
 ![istio-controlplane-pods](../images/istio-controlplane-pods-16555694373013.png)
+
+Cluster > Service Discovery > Services to view different Services created
 
 ![istio-service](../images/istio-service-16555694554844.png)
 
-
-
 With this, you should now have both Istio and Monitoring appear as left side menu pane. 
 
-We are ready to move to the [Exercise-02-Deploy Sample Bookinfo Microservices Application](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-02-Deploy-Sample-Bookinfo-Microservices-Application.md)
+This bring us to end of exercise 1. Let's summarize what we have accomplished so far.  
 
+We have created new repository so that we can easily deploy our application. We have created project & namespace so that we can deploy our application into it's respective namespace and finally we have provision `Rancher Monitoring` & `Istio`. 
+
+In exercise 2, we will deploy our sample Bookinfo microservices application. Click on the link to proceed to [Exercise-02-Deploy Sample Bookinfo Microservices Application](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-02-DeploySampleBookinfoMicroservicesApplication.md)
 

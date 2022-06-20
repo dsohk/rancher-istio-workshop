@@ -19,14 +19,12 @@ This repository contains provide the lab exercise guide for a hands-on workshop 
 ## Lab Exercises
 
 * Access to the lab environment
-* [Deploy Monitoring and Istio onto RKE2 cluster](https://github.com/dsohk/rancher-istio-workshop.git/docs/Exercise-01-Deploy Monitoring and Istio on RKE2 Cluster.md)
-* [Deploy Sample BookInfo Microservices](docs/Exercise-02-Deploy sample Bookinfo Microservices Application.md)
-* [Traffic Canary Deployment](docs/Exercise-03-Traffic Shaping with Service Mesh.md)
-* [Visualize Service Mesh with Kiali](docs/Exercise-04-Visualize Service Mesh with Kiali.md)
-* [Explore Distributed Tracing with Jaeger](docs/Exercise-05-Explore Distributed Tracing with Jaeger.md)
-* [A glimpse of NeuVector in how it secures Microservices](docs/Exercise-06-Explore NeuVector and how it secure Microservices.md)
-
-
+* [Exercise-01-Deploy Monitoring and Istio onto RKE2 cluster](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-01-DeployMonitoringandIstioonRKE2 Cluster.md)
+* [Exercise-02-Deploy Sample Bookinfo Microservices Application](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-02-DeploySampleBookinfoMicroservicesApplication.md)
+* [Exercise-03-Traffic Shaping with Service Mesh Canary Deployment](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-03-Traffic-Shaping-with-ServiceMesh.md)
+* [Exercise-04-Visualize Service Mesh with Kiali](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-04-Visualize-ServiceMesh-with-Kiali.md)
+* [Exercise-05-Explore Distributed Tracing with Jaeger](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-05-ExploreDistributedTracingwithJaeger.md)
+* [Exercise-06-Explore NeuVector and how it secure microserivces](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-06-ExploreNeuVectorandhowitsecureMicroservices.md)
 
 ## References
 

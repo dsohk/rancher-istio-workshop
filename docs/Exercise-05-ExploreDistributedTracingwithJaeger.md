@@ -34,3 +34,6 @@ You can also toggle to `system architecture` page > `dag` page to have an overvi
 
 ![jaeger-system-architecture-dag](../images/jaeger-system-architecture-dag.png)
 
+This bring us to end of this exercise 05-Explore Jaeger. Jaeger help is distributed tracing, helps with performance & latency optimization.
+
+In next exercise, we will take a look at SUSE's latest offering into Container Security `NeuVector`.  NeuVector provides full life-cycle container security. Click on the link to move to [Exercise-06-Explore NeuVector and how it secure microserivces](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-06-ExploreNeuVectorandhowitsecureMicroservices.md)
