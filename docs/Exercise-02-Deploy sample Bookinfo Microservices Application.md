@@ -146,3 +146,4 @@ With this we have successfully completed step 2 of the workshop.
 To summarize, we have deployed the micro-services, enabled Istio, injected Istio sidecars to our application, configured Istio Gateway & destination rule to access application and it's application traffic. Finally we have deployed a container to access the application. 
 
 In the next steps, we will observe the application traffic via Kiali & Jaeger. 
+
