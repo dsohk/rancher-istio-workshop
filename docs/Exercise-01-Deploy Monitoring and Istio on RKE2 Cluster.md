@@ -65,7 +65,8 @@ Similarly repeat the previous step for creating yet another namespace which will
 
 `Cluster` > `Project/Namespaces` > `Create Project`
 
-Name the project `loadtest` and then click on `create`.  
+Name the project `loadtest` and then click on `create`.  .
+
 
 Click on `Create Namespace`, name the namespace `loadtest` and then click on `create`
 
