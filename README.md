@@ -19,7 +19,7 @@ This repository contains provide the lab exercise guide for a hands-on workshop 
 ## Lab Exercises
 
 * Access to the lab environment
-* [Exercise-01-Deploy Monitoring and Istio onto RKE2 cluster](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-01-DeployMonitoringandIstioonRKE2 Cluster.md)
+* [Exercise-01-Deploy Monitoring and Istio onto RKE2 cluster](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-01-DeployMonitoringandIstioonRKE2Cluster.md)
 * [Exercise-02-Deploy Sample Bookinfo Microservices Application](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-02-DeploySampleBookinfoMicroservicesApplication.md)
 * [Exercise-03-Traffic Shaping with Service Mesh Canary Deployment](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-03-Traffic-Shaping-with-ServiceMesh.md)
 * [Exercise-04-Visualize Service Mesh with Kiali](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-04-Visualize-ServiceMesh-with-Kiali.md)
