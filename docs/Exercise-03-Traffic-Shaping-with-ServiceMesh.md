@@ -16,7 +16,7 @@ Cluster > Istio > Virtual Services > Import YAML > Read from File/Copy the yaml 
 
 Select appropriate namespace, `bookinfo` & hit `Import`
 
-![import-yaml-all-traffic-to-v1](../import-yaml-all-traffic-to-v1.png)
+![import-yaml-all-traffic-to-v1](../images/import-yaml-all-traffic-to-v1-16557201638081.png)
 
 Refresh the /productpage in your browser,  notice that the reviews part of the page displays with no rating stars, no matter how many times you refresh. This is because you configured Istio to route all traffic for the reviews service to the version `reviews:v1` and this version of the service does not access the star ratings service.
 
@@ -30,7 +30,7 @@ Cluster > Istio > Virtual Services > Import YAML > Read from File/Copy the yaml 
 
 Select appropriate namespace, `bookinfo` & hit `Import`
 
-![50-traffic-to-v1-&-50-to-v3](../50-traffic-to-v1-&-50-to-v3.png)
+![50-traffic-to-v1-&-50-to-v3](../images/50-traffic-to-v1-&-50-to-v3-16557201989352.png)
 
 Refresh the /productpage in your browser and you now see red colored star ratings approximately 50% of the time. This is because the v3 version of reviews accesses the star ratings service, but the v1 version does not
 
@@ -46,7 +46,7 @@ Cluster > Istio > Virtual Services > Import YAML > Read from File/Copy the yaml 
 
 Select appropriate namespace, `bookinfo` & hit `Import`
 
-![all-traffic-v3](../all-traffic-v3.png)
+![all-traffic-v3](../images/all-traffic-v3-16557202406723.png)
 
 Now when you refresh the `/productpage` you will always see book reviews with *red* colored star ratings for each review
 
