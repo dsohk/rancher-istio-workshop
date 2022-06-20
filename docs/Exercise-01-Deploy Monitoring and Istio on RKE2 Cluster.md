@@ -184,11 +184,8 @@ Once Istio is provisioned, you can check the pods in the **Istio-system** namesp
 
 
 
-With this, you should now have both Istio and Monitoring apear as left side menu pane. 
+With this, you should now have both Istio and Monitoring appear as left side menu pane. 
 
-We are ready to move to the **[Exercise-02-Deploy Sample Bookinfo Microservices Application](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-02-Deploy sample Bookinfo Microservices Application.md)**
+We are ready to move to the [Exercise-02-Deploy Sample Bookinfo Microservices Application](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-02-Deploy-Sample-Bookinfo-Microservices-Application.md)
 
-
-
-Part 2 [Exercise 2 - Deploy Sample Bookinfo Microservices Application](https://github.com/dsohk/rancher-devsecops-workshop/blob/main/docs/part-2.md)
 
