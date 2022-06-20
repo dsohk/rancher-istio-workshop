@@ -51,3 +51,4 @@ Select appropriate namespace, `bookinfo` & hit `Import
 **Now when you refresh the `/productpage` you will always see book reviews with *red* colored star ratings for each review**
 
 In this task you migrated traffic from an old to new version of the `reviews` service using Istio’s weighted routing feature
+
