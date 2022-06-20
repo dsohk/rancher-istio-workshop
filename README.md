@@ -19,11 +19,12 @@ This repository contains provide the lab exercise guide for a hands-on workshop 
 ## Lab Exercises
 
 * Access to the lab environment
-* [Deploy Monitoring and Istio onto RKE2 cluster](docs/01-setup-istio.md)
-* [Deploy Sample BookInfo Microservices](docs/02-deploy-microservices.md)
-* [Visualize Service Mesh with Kiali](docs/03-explore-kiali.md)
-* [Explore Distributed Tracing with Jaeger](docs/04-explore-jaeger.md)
-* [A glimpse of NeuVector in how it secures Microservices](docs/05-explore-neuvector.md)
+* [Deploy Monitoring and Istio onto RKE2 cluster](docs/Exercise-01-Deploy Monitoring and Istio on RKE2 Cluster.md)
+* [Deploy Sample BookInfo Microservices](docs/Exercise-02-Deploy sample Bookinfo Microservices Application.md)
+* [Traffic Canary Deployment](docs/Exercise-03-Traffic Shaping with Service Mesh.md)
+* [Visualize Service Mesh with Kiali](docs/Exercise-04-Visualize Service Mesh with Kiali.md)
+* [Explore Distributed Tracing with Jaeger](docs/Exercise-05-Explore Distributed Tracing with Jaeger.md)
+* [A glimpse of NeuVector in how it secures Microservices](docs/Exercise-06-Explore NeuVector and how it secure Microservices.md)
 
 
 
