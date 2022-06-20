@@ -84,5 +84,3 @@ To summarize, we have viewed how our application traffic is going from Istio Ing
 
 
 
-
-
