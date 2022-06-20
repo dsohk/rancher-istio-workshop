@@ -147,3 +147,4 @@ To summarize, we have deployed the micro-services, enabled Istio, injected Istio
 
 In the next steps, we will observe the application traffic via Kiali & Jaeger. 
 
+We are ready to move to the [Exercise-03-Traffic Shaping with Service Mesh (Canary Deployment)](https://github.com/dsohk/rancher-istio-workshop/blob/main/docs/Exercise-03-Traffic Shaping-with-ServiceMesh.md)
