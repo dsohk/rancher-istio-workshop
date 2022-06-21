@@ -10,11 +10,15 @@ A common use case is to migrate traffic gradually from an older version of a mic
 
 In this task, you will use send 100% of traffic to **reviews:v1** , ***reviews:v1 part of the page displays with no rating stars***
 
-Cluster > Istio > Virtual Services > Import YAML > Read from File/Copy the yaml content
+Cluster > Istio > Virtual Services > Import YAML.  You can import directly from existing file or copy & paste the content in the area provided. 
 
-`route-all-traffic-to-v1.yaml`
+YAML file are kept on GitHub, you can pick them up by clicking on URL https://github.com/dsohk/rancher-istio-workshop/tree/main/yaml-files 
 
-Select appropriate namespace, `bookinfo` & hit `Import`
+Inside the folder you will see 3 yaml files, look for `route-all-traffic-to-v1.yaml`  click on it to view the content. Click on the icon as displayed in the image below to copy the yaml content
+
+![copy-yaml-content-virtual-service](../images/copy-yaml-content-virtual-service.png)
+
+Once you are done copying the content, ensure you have selected appropriate namespace `bookinfo` & finally hit the `Import` button
 
 ![import-yaml-all-traffic-to-v1](../images/import-yaml-all-traffic-to-v1-16557201638081.png)
 
@@ -26,9 +30,9 @@ In this task, you will send 50% of traffic to **reviews:v1**  & **reviews:v3** r
 
 Cluster > Istio > Virtual Services > Import YAML > Read from File/Copy the yaml content
 
-`transfer-50%-traffic-to-reviews-v1-&-50%-to-reviews-v3.yaml`
+Repeat the step to get to GitHub Repo as per instruction in Task 1 & look for file `transfer-50%-traffic-to-reviews-v1-&-50%-to-reviews-v3.yaml`
 
-Select appropriate namespace, `bookinfo` & hit `Import`
+Copy & Paste the content. Ensure you have select appropriate namespace, `bookinfo` & hit `Import`
 
 ![50-traffic-to-v1-&-50-to-v3](../images/50-traffic-to-v1-&-50-to-v3-16557201989352.png)
 
@@ -40,11 +44,11 @@ In this task, you will send 100% of traffic to **reviews:v3**. ***reviews:v3 par
 
 Assuming you decide that the `reviews:v3` microservice is stable, you can route 100% of the traffic to `reviews:v3` by applying this virtual service:
 
-Cluster > Istio > Virtual Services > Import YAML > Read from File/Copy the yaml content
+Cluster > Istio > Virtual Services > Import YAML
 
-`reviews-only-v3`
+Repeat the step to get to GitHub Repo as per instruction in Task 1 & look for file `reviews-only-v3`
 
-Select appropriate namespace, `bookinfo` & hit `Import`
+Copy & Paste the content. Ensure you have select appropriate namespace, `bookinfo` & hit the `Import` button.
 
 ![all-traffic-v3](../images/all-traffic-v3-16557202406723.png)
 
