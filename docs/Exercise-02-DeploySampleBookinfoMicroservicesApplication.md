@@ -11,6 +11,7 @@ Before we deploy microservices app into default namespace, we need to make sure 
 Click `Istio` on the left pane menu and Click `Kiali`
 
 Choose `bookinfo` namespace, click `3 dots vertical line` and click on `Enable Auto Injection`
+
 Sample image for reference only
 
 ![01-rke2cluster1-istio-kiali-enable-auto-injection](../images/01-rke2cluster1-istio-kiali-enable-auto-injection.png)
