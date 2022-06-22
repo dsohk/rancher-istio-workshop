@@ -1,6 +1,6 @@
 # Lab 2 - Deploy Sample BookInfo Microservices
 
-With Istio (Service Mesh) and Prometheus/Grafana (Monitoring) components deployed on the RKE2, let's deploy a sample microservices-based application on to the `default` namespace of this cluster.
+With Istio (Service Mesh) and Prometheus/Grafana (Monitoring) components deployed on the RKE2, let's deploy a sample microservices-based application on to the `bookinfo` namespace of this cluster.
 
 
 
