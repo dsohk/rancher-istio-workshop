@@ -6,7 +6,7 @@ With Istio (Service Mesh) and Prometheus/Grafana (Monitoring) components deploye
 
 ## Step 1 - Enable Auto-injection in default namespace
 
-Before we deploy microservices app into default namespace, we need to make sure Istio can automatically inject an envoy proxy sidecar sitting next to teach cicroservices. To achieve this, we need to enable auto-injection.
+Before we deploy microservices app into default namespace, we need to make sure Istio can automatically inject an envoy proxy sidecar sitting next to each microservices. To achieve this, we need to enable auto-injection.
 
 Click `Istio` on the left pane menu and Click `Kiali`
 
